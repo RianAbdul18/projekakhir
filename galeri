@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri - MTs Darul Falah</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #1e90ff;
+            color: white;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: #ffd700;
+        }
+
+        .nav-links li a.active {
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        /* Section Styles */
+        .section {
+            flex: 1;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .section h2 {
+            color: #1e90ff;
+            margin-bottom: 2rem;
+        }
+
+        /* Gallery Styles */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem;
+        }
+
+        .gallery-item {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item p {
+            padding: 1rem;
+            color: #333;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">MTs Darul Falah</div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Beranda</a></li>
+                <li><a href="profil.html">Profil</a></li>
+                <li><a href="ekstrakurikuler.html">Ekstrakurikuler</a></li>
+                <li><a href="index.html#berita">Berita dan Artikel</a></li>
+                <li><a href="index.html#kontak">Kontak</a></li>
+                <li><a href="galeri.html" class="active">Galeri</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="section" id="galeri">
+        <h2>Galeri</h2>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="https://source.unsplash.com/400x300/?school,activity" alt="Kegiatan Sekolah">
+                <p>Kegiatan Sekolah 1</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://source.unsplash.com/400x300/?school,students" alt="Kegiatan Sekolah">
+                <p>Kegiatan Sekolah 2</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://source.unsplash.com/400x300/?school,events" alt="Kegiatan Sekolah">
+                <p>Kegiatan Sekolah 3</p>
+            </div>
+            <!-- Tambahkan lebih banyak .gallery-item sesuai kebutuhan -->
+        </div>
+        <p style="margin-top: 2rem;">Silakan masukkan gambar kegiatan sekolah di atas dengan mengganti elemen &lt;img&gt;.</p>
+    </section>
+
+    <footer>
+        <p>© 2025 MTs Darul Falah. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-links a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 60,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
