@@ -12,11 +12,18 @@
             font-family: Arial, sans-serif;
         }
 
-        body {
-            line-height: 1.6;
+        html, body {
+            height: 100%;
+            margin: 0;
         }
 
-        /* Header Styles */
+        body {
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
         header {
             background-color: #1e90ff;
             color: white;
@@ -56,7 +63,11 @@
             color: #ffd700;
         }
 
-        /* Hero Section */
+        .nav-links li a.active {
+            color: #ffd700;
+            font-weight: bold;
+        }
+
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://source.unsplash.com/1600x900/?school');
@@ -77,24 +88,44 @@
 
         .hero-content p {
             font-size: 1.2rem;
-            max-width: 600px;
+            max-width پرداز
+
+System: 600px;
             margin: 0 auto;
         }
 
-        /* About Section */
-        .about {
+        .section {
             padding: 4rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
         }
 
-        .about h2 {
+        .section h2 {
             color: #1e90ff;
             margin-bottom: 2rem;
         }
 
-        /* Footer */
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            width: 300px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            color: #1e90ff;
+            margin-bottom: 1rem;
+        }
+
         footer {
             background-color: #333;
             color: white;
@@ -102,7 +133,6 @@
             padding: 2rem;
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
                 gap: 1rem;
@@ -115,19 +145,28 @@
             .hero-content p {
                 font-size: 1rem;
             }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            .card {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">MTs Al-Ikhsan</div>
+            <div class="logo">MTs Darul Falah</div>
             <ul class="nav-links">
-                <li><a href="#home">Beranda</a></li>
-                <li><a href="#profil">Profil</a></li>
-                <li><a href="#ekstrakurikuler">Ekstrakurikuler</a></li>
+                <li><a href="#home" class="active">Beranda</a></li>
+                <li><a href="profil.html">Profil</a></li>
+                <li><a href="ekstrakurikuler.html">Ekstrakurikuler</a></li>
                 <li><a href="#berita">Berita dan Artikel</a></li>
                 <li><a href="#kontak">Kontak</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
             </ul>
         </nav>
     </header>
@@ -139,31 +178,46 @@
         </div>
     </section>
 
-    <section class="about" id="profil">
-        <h2>Profil Sekolah</h2>
-        <p>MTs Al-Ikhsan adalah madrasah tsanawiyah yang berkomitmen untuk memberikan pendidikan berkualitas dengan mengintegrasikan nilai-nilai Islam, ilmu pengetahuan, dan teknologi. Kami berfokus pada pembentukan karakter siswa yang unggul dalam akademik dan akhlak.</p>
+    <section class="section" id="berita">
+        <h2>Berita dan Artikel</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>Peringatan Hari Guru 2025</h3>
+                <p>MTs Darul Falah mengadakan acara spesial untuk menghormati jasa para guru.</p>
+            </div>
+            <div class="card">
+                <h3>Lomba Sains Nasional</h3>
+                <p>Siswa kami meraih juara 1 dalam kompetisi sains tingkat nasional.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="kontak">
+        <h2>Kontak Kami</h2>
+        <p>Alamat: Jl. Pendidikan No. 123, Kota XYZ</p>
+        <p>Email: info@mtsdarulfalah.sch.id</p>
+        <p>Telepon: (021) 123-4567</p>
     </section>
 
     <footer>
-        <p>© 2025 MTs Al-Ikhsan. All rights reserved.</p>
+        <p>© 2025 MTs Darul Falah. All rights reserved.</p>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
         document.querySelectorAll('.nav-links a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                window.scrollTo({
-                    top: targetElement.offsetTop - 60,
-                    behavior: 'smooth'
-                });
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 60,
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
 
-        // Add active class to current nav link
         window.addEventListener('scroll', () => {
             let current = '';
             const sections = document.querySelectorAll('section');
@@ -184,12 +238,10 @@
             });
         });
 
-        // Simple animation for hero content
         document.addEventListener('DOMContentLoaded', () => {
             const heroContent = document.querySelector('.hero-content');
             heroContent.style.opacity = '0';
             heroContent.style.transform = 'translateY(20px)';
-            
             setTimeout(() => {
                 heroContent.style.transition = 'all 0.5s ease';
                 heroContent.style.opacity = '1';
