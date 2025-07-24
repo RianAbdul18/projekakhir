@@ -24,7 +24,6 @@
             min-height: 100vh;
         }
 
-        /* Header Styles */
         header {
             background-color: #1e90ff;
             color: white;
@@ -69,7 +68,6 @@
             font-weight: bold;
         }
 
-        /* Section Styles */
         .section {
             flex: 1;
             padding: 4rem 2rem;
@@ -84,7 +82,6 @@
             margin-bottom: 2rem;
         }
 
-        /* Dropdown Menu */
         .dropdown-container {
             margin: 2rem 0;
             text-align: center;
@@ -118,7 +115,6 @@
             margin-bottom: 1rem;
         }
 
-        /* Footer */
         footer {
             background-color: #333;
             color: white;
@@ -126,7 +122,6 @@
             padding: 2rem;
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
                 gap: 1rem;
@@ -153,6 +148,7 @@
                 <li><a href="ekstrakurikuler.html">Ekstrakurikuler</a></li>
                 <li><a href="index.html#berita">Berita dan Artikel</a></li>
                 <li><a href="index.html#kontak">Kontak</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
             </ul>
         </nav>
     </header>
@@ -191,7 +187,6 @@
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
         document.querySelectorAll('.nav-links a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 if (this.getAttribute('href').startsWith('#')) {
@@ -206,7 +201,6 @@
             });
         });
 
-        // Dropdown navigation
         function navigateToSection() {
             const select = document.getElementById('profil-menu');
             const targetId = select.value;
