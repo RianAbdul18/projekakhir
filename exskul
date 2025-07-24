@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ekstrakurikuler - MTs Darul Falah</title>
+    <title>Profil - MTs Darul Falah</title>
     <style>
         * {
             margin: 0;
@@ -24,7 +24,6 @@
             min-height: 100vh;
         }
 
-        /* Header Styles */
         header {
             background-color: #1e90ff;
             color: white;
@@ -69,9 +68,8 @@
             font-weight: bold;
         }
 
-        /* Section Styles */
         .section {
-            flex: 1; /* Mengisi ruang yang tersedia untuk mendorong footer ke bawah */
+            flex: 1;
             padding: 4rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
@@ -84,7 +82,39 @@
             margin-bottom: 2rem;
         }
 
-        /* Footer */
+        .dropdown-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .dropdown-container select {
+            padding: 0.5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #1e90ff;
+            background-color: #fff;
+            color: #333;
+            cursor: pointer;
+            width: 200px;
+        }
+
+        .dropdown-container select:focus {
+            outline: none;
+            border-color: #ffd700;
+        }
+
+        .sub-section {
+            margin-top: 3rem;
+            padding: 2rem;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .sub-section h3 {
+            color: #1e90ff;
+            margin-bottom: 1rem;
+        }
+
         footer {
             background-color: #333;
             color: white;
@@ -92,7 +122,6 @@
             padding: 2rem;
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
                 gap: 1rem;
@@ -100,6 +129,11 @@
 
             .section h2 {
                 font-size: 1.5rem;
+            }
+
+            .dropdown-container select {
+                width: 100%;
+                max-width: 300px;
             }
         }
     </style>
@@ -110,17 +144,42 @@
             <div class="logo">MTs Darul Falah</div>
             <ul class="nav-links">
                 <li><a href="index.html#home">Beranda</a></li>
-                <li><a href="index.html#profil">Profil</a></li>
-                <li><a href="ekstrakurikuler.html" class="active">Ekstrakurikuler</a></li>
+                <li><a href="profil.html" class="active">Profil</a></li>
+                <li><a href="ekstrakurikuler.html">Ekstrakurikuler</a></li>
                 <li><a href="index.html#berita">Berita dan Artikel</a></li>
                 <li><a href="index.html#kontak">Kontak</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="section" id="ekstrakurikuler">
-        <h2>Ekstrakurikuler</h2>
-        <p>Silakan masukkan informasi tentang kegiatan ekstrakurikuler di sini.</p>
+    <section class="section" id="profil">
+        <h2>Profil</h2>
+        <div class="dropdown-container">
+            <select id="profil-menu" onchange="navigateToSection()">
+                <option value="#profil-sekolah">Profil Sekolah</option>
+                <option value="#fasilitas">Fasilitas</option>
+                <option value="#tenaga-pengajar">Tenaga Pengajar</option>
+                <option value="#visi-misi">Visi dan Misi</option>
+            </select>
+        </div>
+
+        <div class="sub-section" id="profil-sekolah">
+            <h3>Profil Sekolah</h3>
+            <p>Silakan masukkan informasi tentang profil sekolah di sini.</p>
+        </div>
+        <div class="sub-section" id="fasilitas">
+            <h3>Fasilitas</h3>
+            <p>Silakan masukkan informasi tentang fasilitas sekolah di sini.</p>
+        </div>
+        <div class="sub-section" id="tenaga-pengajar">
+            <h3>Tenaga Pengajar</h3>
+            <p>Silakan masukkan informasi tentang tenaga pengajar di sini.</p>
+        </div>
+        <div class="sub-section" id="visi-misi">
+            <h3>Visi dan Misi</h3>
+            <p>Silakan masukkan informasi tentang visi dan misi sekolah di sini.</p>
+        </div>
     </section>
 
     <footer>
@@ -128,15 +187,12 @@
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
         document.querySelectorAll('.nav-links a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
-                // Only apply smooth scrolling for same-page links
                 if (this.getAttribute('href').startsWith('#')) {
                     e.preventDefault();
                     const targetId = this.getAttribute('href');
                     const targetElement = document.querySelector(targetId);
-                    
                     window.scrollTo({
                         top: targetElement.offsetTop - 60,
                         behavior: 'smooth'
@@ -144,6 +200,16 @@
                 }
             });
         });
+
+        function navigateToSection() {
+            const select = document.getElementById('profil-menu');
+            const targetId = select.value;
+            const targetElement = document.querySelector(targetId);
+            window.scrollTo({
+                top: targetElement.offsetTop - 60,
+                behavior: 'smooth'
+            });
+        }
     </script>
 </body>
 </html>
