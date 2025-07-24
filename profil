@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - MTs Darul Falah</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #1e90ff;
+            color: white;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: #ffd700;
+        }
+
+        .nav-links li a.active {
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        /* Section Styles */
+        .section {
+            flex: 1;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .section h2 {
+            color: #1e90ff;
+            margin-bottom: 2rem;
+        }
+
+        /* Dropdown Menu */
+        .dropdown-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .dropdown-container select {
+            padding: 0.5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #1e90ff;
+            background-color: #fff;
+            color: #333;
+            cursor: pointer;
+            width: 200px;
+        }
+
+        .dropdown-container select:focus {
+            outline: none;
+            border-color: #ffd700;
+        }
+
+        .sub-section {
+            margin-top: 3rem;
+            padding: 2rem;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .sub-section h3 {
+            color: #1e90ff;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            .dropdown-container select {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">MTs Darul Falah</div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Beranda</a></li>
+                <li><a href="profil.html" class="active">Profil</a></li>
+                <li><a href="ekstrakurikuler.html">Ekstrakurikuler</a></li>
+                <li><a href="index.html#berita">Berita dan Artikel</a></li>
+                <li><a href="index.html#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="section" id="profil">
+        <h2>Profil</h2>
+        <div class="dropdown-container">
+            <select id="profil-menu" onchange="navigateToSection()">
+                <option value="#profil-sekolah">Profil Sekolah</option>
+                <option value="#fasilitas">Fasilitas</option>
+                <option value="#tenaga-pengajar">Tenaga Pengajar</option>
+                <option value="#visi-misi">Visi dan Misi</option>
+            </select>
+        </div>
+
+        <div class="sub-section" id="profil-sekolah">
+            <h3>Profil Sekolah</h3>
+            <p>Silakan masukkan informasi tentang profil sekolah di sini.</p>
+        </div>
+        <div class="sub-section" id="fasilitas">
+            <h3>Fasilitas</h3>
+            <p>Silakan masukkan informasi tentang fasilitas sekolah di sini.</p>
+        </div>
+        <div class="sub-section" id="tenaga-pengajar">
+            <h3>Tenaga Pengajar</h3>
+            <p>Silakan masukkan informasi tentang tenaga pengajar di sini.</p>
+        </div>
+        <div class="sub-section" id="visi-misi">
+            <h3>Visi dan Misi</h3>
+            <p>Silakan masukkan informasi tentang visi dan misi sekolah di sini.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 MTs Darul Falah. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-links a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 60,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Dropdown navigation
+        function navigateToSection() {
+            const select = document.getElementById('profil-menu');
+            const targetId = select.value;
+            const targetElement = document.querySelector(targetId);
+            window.scrollTo({
+                top: targetElement.offsetTop - 60,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
