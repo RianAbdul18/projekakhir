@@ -1,215 +1,185 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil - MTs Darul Falah</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-        html, body {
-            height: 100%;
-            margin: 0;
-        }
+html, body {
+    height: 100%;
+    margin: 0;
+}
 
-        body {
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+body {
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
-        header {
-            background-color: #1e90ff;
-            color: white;
-            padding: 1rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
+header {
+    background-color: #d71337;
+    color: white;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
 
-        .nav-links li a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
 
-        .nav-links li a:hover {
-            color: #ffd700;
-        }
+.nav-links li a:hover {
+    color: #ffd700;
+}
 
-        .nav-links li a.active {
-            color: #ffd700;
-            font-weight: bold;
-        }
+.nav-links li a.active {
+    color: #ffd700;
+    font-weight: bold;
+}
 
-        .section {
-            flex: 1;
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-            margin-top: 60px;
-        }
+.hero {
+    background-image: url('img/gambar1.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 6rem 2rem;
+    text-align: center;
+    margin-top: 10px;
+}
 
-        .section h2 {
-            color: #1e90ff;
-            margin-bottom: 2rem;
-        }
+.hero h2 {
+    color: #34373b;
+    margin-bottom: 1rem;
+}
 
-        .dropdown-container {
-            margin: 2rem 0;
-            text-align: center;
-        }
+.hero button {
+    padding: 0.5rem 1rem;
+    background-color: #232527;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-        .dropdown-container select {
-            padding: 0.5rem;
-            font-size: 1rem;
-            border-radius: 5px;
-            border: 1px solid #1e90ff;
-            background-color: #fff;
-            color: #333;
-            cursor: pointer;
-            width: 200px;
-        }
+.hero button:hover {
+    background-color: #ffd700;
+}
 
-        .dropdown-container select:focus {
-            outline: none;
-            border-color: #ffd700;
-        }
+.section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 60px;
+}
 
-        .sub-section {
-            margin-top: 3rem;
-            padding: 2rem;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-        }
+.section h2 {
+    color: #1e90ff;
+    margin-bottom: 2rem;
+}
 
-        .sub-section h3 {
-            color: #1e90ff;
-            margin-bottom: 1rem;
-        }
+.program-list {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-        }
+.program-card {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 300px;
+    text-align: left;
+}
 
-        @media (max-width: 768px) {
-            .nav-links {
-                gap: 1rem;
-            }
+.program-card h3 {
+    color: #1e90ff;
+    margin-bottom: 1rem;
+}
 
-            .section h2 {
-                font-size: 1.5rem;
-            }
+.program-card ul {
+    list-style: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
 
-            .dropdown-container select {
-                width: 100%;
-                max-width: 300px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">MTs Darul Falah</div>
-            <ul class="nav-links">
-                <li><a href="index.html#home">Beranda</a></li>
-                <li><a href="profil.html" class="active">Profil</a></li>
-                <li><a href="ekstrakurikuler.html">Ekstrakurikuler</a></li>
-                <li><a href="index.html#berita">Berita dan Artikel</a></li>
-                <li><a href="index.html#kontak">Kontak</a></li>
-                <li><a href="galeri.html">Galeri</a></li>
-            </ul>
-        </nav>
-    </header>
+.program-card button {
+    padding: 0.5rem 1rem;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
-    <section class="section" id="profil">
-        <h2>Profil</h2>
-        <div class="dropdown-container">
-            <select id="profil-menu" onchange="navigateToSection()">
-                <option value="#profil-sekolah">Profil Sekolah</option>
-                <option value="#fasilitas">Fasilitas</option>
-                <option value="#tenaga-pengajar">Tenaga Pengajar</option>
-                <option value="#visi-misi">Visi dan Misi</option>
-            </select>
-        </div>
+.program-card button:hover {
+    background-color: #ffd700;
+}
 
-        <div class="sub-section" id="profil-sekolah">
-            <h3>Profil Sekolah</h3>
-            <p>Silakan masukkan informasi tentang profil sekolah di sini.</p>
-        </div>
-        <div class="sub-section" id="fasilitas">
-            <h3>Fasilitas</h3>
-            <p>Silakan masukkan informasi tentang fasilitas sekolah di sini.</p>
-        </div>
-        <div class="sub-section" id="tenaga-pengajar">
-            <h3>Tenaga Pengajar</h3>
-            <p>Silakan masukkan informasi tentang tenaga pengajar di sini.</p>
-        </div>
-        <div class="sub-section" id="visi-misi">
-            <h3>Visi dan Misi</h3>
-            <p>Silakan masukkan informasi tentang visi dan misi sekolah di sini.</p>
-        </div>
-    </section>
+.gallery {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
-    <footer>
-        <p>© 2025 MTs Darul Falah. All rights reserved.</p>
-    </footer>
+.gallery img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
 
-    <script>
-        document.querySelectorAll('.nav-links a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                if (this.getAttribute('href').startsWith('#')) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 60,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
+footer {
+    background-image: ("gambar1");
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: auto;
+}
 
-        function navigateToSection() {
-            const select = document.getElementById('profil-menu');
-            const targetId = select.value;
-            const targetElement = document.querySelector(targetId);
-            window.scrollTo({
-                top: targetElement.offsetTop - 60,
-                behavior: 'smooth'
-            });
-        }
-    </script>
-</body>
-</html>
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
+    }
+
+    .program-card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .gallery img {
+        width: 100%;
+        max-width: 300px;
+    }
+}
