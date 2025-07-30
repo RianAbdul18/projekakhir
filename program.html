@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Unggulan - MTS Darul Falah </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>SMA Nusantara</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li><a href="program.html" class="active">Program</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="programs" class="section">
+        <div class="container">
+            <h2>Program Unggulan Kami</h2>
+            <p>Berikut adalah program unggulan yang ditawarkan SMA Nusantara untuk mendukung perkembangan siswa secara akademik dan non-akademik.</p>
+
+            <div class="program-list">
+                <div class="program-card">
+                    <h3>Jurusan IPA</h3>
+                    <p>Program intensif untuk siswa yang ingin mendalami ilmu pengetahuan alam, dengan fokus pada biologi, fisika, dan kimia.</p>
+                    <ul>
+                        <li>Laboratorium modern</li>
+                        <li>Penelitian siswa</li>
+                        <li>Kompetisi sains nasional</li>
+                    </ul>
+                    <button onclick="showProgramDetails('IPA')">Lihat Detail</button>
+                </div>
+                <div class="program-card">
+                    <h3>Jurusan IPS</h3>
+                    <p>Pelajari dinamika sosial, ekonomi, dan budaya dengan pendekatan interdisipliner.</p>
+                    <ul>
+                        <li>Studi kasus global</li>
+                        <li>Debat dan simulasi</li>
+                        <li>Proyek penelitian sosial</li>
+                    </ul>
+                    <button onclick="showProgramDetails('IPS')">Lihat Detail</button>
+                </div>
+                <div class="program-card">
+                    <h3>Ekstrakurikuler</h3>
+                    <p>Kembangkan bakat dan minat melalui berbagai klub seperti musik, olahraga, dan teknologi.</p>
+                    <ul>
+                        <li>Klub Robotika</li>
+                        <li>Paduan Suara</li>
+                        <li>Tim Basket</li>
+                    </ul>
+                    <button onclick="showProgramDetails('Ekstrakurikuler')">Lihat Detail</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2>Galeri Kegiatan</h2>
+            <div class="gallery">
+                <img src="https://via.placeholder.com/300x200?text=Kegiatan+IPA" alt="Kegiatan IPA">
+                <img src="https://via.placeholder.com/300x200?text=Kegiatan+IPS" alt="Kegiatan IPS">
+                <img src="https://via.placeholder.com/300x200?text=Ekstrakurikuler" alt="Ekstrakurikuler">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 SMA Nusantara. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
