@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+header h1 {
+    float: left;
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    background: #3498db;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    margin-top: 60px;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.hero button:hover {
+    background: #c0392b;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.program-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.program-card {
+    flex: 1;
+    margin: 0 10px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    text-align: center;
+}
+
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+/* Gaya yang sudah ada tetap digunakan, tambahkan berikut: */
+.program-card ul {
+    list-style-type: disc;
+    margin: 1rem 0;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.program-card button {
+    padding: 8px 16px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.program-card button:hover {
+    background: #2980b9;
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.gallery img {
+    width: 30%;
+    border-radius: 5px;
+}
+
+nav .active {
+    font-weight: bold;
+    border-bottom: 2px solid #e74c3c;
+}
