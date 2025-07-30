@@ -140,6 +140,7 @@ nav {
 
 .program-card button:hover {
     background-color: #ffd700;
+    align-items: baseline;
 }
 
 .gallery {
