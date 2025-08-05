@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-     // Hamburger menu toggle
+    // Hamburger menu toggle
     const hamburger = document.querySelector('.hamburger');
     const menu = document.querySelector('.menu');
 
@@ -10,11 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
             hamburger.setAttribute('aria-expanded', !isExpanded);
         });
+    }
+
     const sliderContainer = document.querySelector('.slider-container');
     if (!sliderContainer) {
         console.error('Slider container tidak ditemukan.');
         return;
-    }}
+    }
 
     const images = document.querySelectorAll('.slider-image');
     if (images.length === 0) {
@@ -22,31 +24,31 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    const totalImages = images.length; // Total 3 gambar
-    const transitionDuration = 600; // Durasi transisi dalam ms
+    const totalImages = images.length;
+    const transitionDuration = 600;
     let currentIndex = 0;
+
+    function updateSlider() {
+        sliderContainer.style.transition = `transform ${transitionDuration}ms ease-in-out`;
+        sliderContainer.style.transform = `translateX(-${currentIndex * (100 / totalImages)}%)`;
+    }
 
     function slideNext() {
         currentIndex++;
-        sliderContainer.style.transition = `transform ${transitionDuration}ms ease-in-out`;
-        sliderContainer.style.transform = `translateX(-${currentIndex * (100 / totalImages)}%)`;
-
-        // Reset ke posisi awal tanpa transisi saat mencapai gambar terakhir
-        if (currentIndex === totalImages) {
-            setTimeout(() => {
-                sliderContainer.style.transition = 'none';
-                currentIndex = 0;
-                sliderContainer.style.transform = `translateX(0%)`;
-                requestAnimationFrame(() => {
-                    setTimeout(() => {
-                        sliderContainer.style.transition = `transform ${transitionDuration}ms ease-in-out`;
-                    }, 50);
-                });
-            }, transitionDuration);
+        if (currentIndex >= totalImages) {
+            currentIndex = 0;
+            sliderContainer.style.transition = 'none';
+            sliderContainer.style.transform = `translateX(0%)`;
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    sliderContainer.style.transition = `transform ${transitionDuration}ms ease-in-out`;
+                }, 50);
+            });
         }
+        updateSlider();
     }
 
-    // Ganti gambar setiap 5 detik
+    // Ganti gambar setiap 5 detik secara otomatis
     let slideInterval = setInterval(slideNext, 5000);
 
     // Jeda slideshow saat hover
