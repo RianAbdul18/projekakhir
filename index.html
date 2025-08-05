@@ -1,76 +1,57 @@
 <!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beranda - MTS Darul Falah</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <div class="container">
-            <h1>Selamat Datang di MTS Darul Falah</h1>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#home" class="active">Beranda</a></li>
-                    <li><a href="#about">Tentang</a></li>
-                    <li><a href="program.html">Program</a></li>
-                    <li><a href="#contact">Kontak</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section id="home" class="hero">
-        <div class="container">
-            <h2>Pendidikan Berkualitas untuk Masa Depan</h2>
-            <p>Bergabunglah dengan kami untuk pengalaman belajar yang inspiratif!</p>
-            <button onclick="showMessage()">Daftar Sekarang</button>
-        </div>
-    </section>
-
-    <section id="about" class="section">
-        <div class="container">
-            <h2>Tentang Kami</h2>
-            <p>MTS Darul Falah adalah sekolah unggulan yang berdedikasi untuk mencetak generasi berprestasi dengan pendidikan holistik.</p>
-        </div>
-    </section>
-
-    <section id="programs" class="section">
-        <div class="container">
-            <h2>Program Unggulan</h2>
-            <div class="program-list">
-                <div class="program-card">
-                    <h3>IPA</h3>
-                    <p>Program sains intensif untuk calon ilmuwan.</p>
-                </div>
-                <div class="program-card">
-                    <h3>IPS</h3>
-                    <p>Pelajari dinamika sosial dan ekonomi dunia.</p>
-                </div>
-                <div class="program-card">
-                    <h3>Ekstrakurikuler</h3>
-                    <p>Kembangkan bakat melalui berbagai klub dan kegiatan.</p>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MTS Darul Falah</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav>
+            <div class="wrapper">
+                <div class="judul"><a href="index.html">MTS Darul Falah</a></div>
+                <button class="hamburger" aria-label="buka menu navigasi">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                <div class="menu">
+                    <ul>
+                        <li><a href="index.html" aria-current="page">Beranda</a></li>
+                        <li><a href="profil.html">Profil</a></li>
+                        <li><a href="galeri.html">Galeri</a></li>
+                        <li><a href="kontak.html">Kontak</a></li>
+                        <li><a href="daftar.html" class="tombol1">Daftar</a></li>  
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section">
-        <div class="container">
-            <h2>Kontak Kami</h2>
-            <p>Email: info@mtsdarulfalah.sch.id</p>
-            <p>Telepon: (021) 1234-5678</p>
-            <p>Alamat: Jl. Pendidikan No. 123, Jakarta</p>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 MTS Darul Falah. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="main.js"></script>
-</body>
+        </nav>
+        <section class="hero-slider" aria-label="Slider Gambar Sekolah">
+            <div class="slider-container">
+            <div class="slider-item">
+                <img src="image/gambar-1.jpg" alt="Gambar 1 MTS Darul Falah" class="slider-image">
+                <div class="slider-overlay">Galeri Kegiatan Sekolah</div>
+            </div>
+                <img src="image/gambar-2.jpg" alt="Gambar 2 MTS Darul Falah" class="slider-image">
+                <img src="image/gambar1.jpg" alt="Gambar 3 MTS Darul Falah" class="slider-image">
+            </div>
+        </section>
+        <section class="content-container" aria-label="Konten Utama">
+            <div class="container">
+                <section class="section-1">
+                    <h3>Agenda</h3>
+                    <p>Daftar agenda kegiatan sekolah.</p>
+                </section>
+                <section class="inner-section">
+                    <h3>Staff Pengajar</h3>
+                    <p>Daftar staff pengajar di MTS Darul Falah.</p>
+                </section>
+                <section class="inner-section">
+                    <h3>Fasilitas</h3>
+                    <p>Informasi fasilitas sekolah.</p>
+                </section>
+            </div>
+        </section>
+        <script src="main.js"></script>
+    </body>
 </html>
