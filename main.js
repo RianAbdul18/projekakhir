@@ -25,15 +25,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const totalImages = images.length;
-    const transitionDuration = 600;
+    const transitionDuration = 300;
     let currentIndex = 0;
 
     function updateSlider() {
         sliderContainer.style.transition = `transform ${transitionDuration}ms ease-in-out`;
-        sliderContainer.style.transform = `translateX(-${currentIndex * (100 / totalImages)}%)`;
+        sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
 
     function slideNext() {
+        console.log(`Berpindah ke gambar indeks: ${currentIndex}`);
         currentIndex++;
         if (currentIndex >= totalImages) {
             currentIndex = 0;
@@ -42,10 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
             requestAnimationFrame(() => {
                 setTimeout(() => {
                     sliderContainer.style.transition = `transform ${transitionDuration}ms ease-in-out`;
+                    updateSlider();
                 }, 50);
             });
+        } else {
+            updateSlider();
         }
-        updateSlider();
     }
 
     // Ganti gambar setiap 5 detik secara otomatis

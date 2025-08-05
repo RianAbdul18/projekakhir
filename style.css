@@ -127,9 +127,9 @@ nav ul li a:hover {
 
 .slider-container {
     display: flex;
-    width: 300%;
-    height: 500px;
-    transition: transform 600ms ease-in-out;
+    width: calc(100% * 3); /* Sesuaikan dengan jumlah gambar */
+    height: 600px;
+    transition: transform 300ms ease-in-out; /* Sesuaikan dengan transitionDuration di JS */
 }
 
 .slider-item {
@@ -160,7 +160,7 @@ nav ul li a:hover {
 }
 
 .section-1 {
-    background: #981f1f;
+    background: #ffffff;
     width: 100%;
     padding: 20px;
     border-radius: 5px;
@@ -173,8 +173,43 @@ nav ul li a:hover {
     text-align: left;
 }
 
+.agenda-sekolah {
+    display: flex;
+    overflow-x: auto;
+    gap: 30px;
+    padding: 30px;
+    scroll-behavior: smooth;
+}
+
+.agenda-rincian {
+    background: cyan;
+    width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    flex-shrink: 0;
+    
+}
+
+.agenda-rincian h4 {
+    margin-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    color: black;
+}
+
+.agenda-rincian p {
+    font-size: 15px;
+    margin: 5px;
+}
+/* Pastikan responsivitas */
+@media screen and (max-width: 768px) {
+    .agenda-item {
+        width: 250px; /* Kurangi lebar untuk layar kecil */
+    }
+}
+
 .inner-section {
-    background: #f0f0f0;
+    background: #ceeaf0;
     width: 100%;
     padding: 20px;
     border-radius: 5px;
@@ -189,17 +224,18 @@ nav ul li a:hover {
     margin-bottom: 0;
 }
 
+
 .staff-gallery {
     display: flex;
     overflow-x: auto;
-    gap: 10px;
-    padding: 10px 0;
+    gap: 30px;
+    padding: 20px 0;
     scroll-behavior: smooth;
 }
 
 .staff-image {
     width: 200px;
-    height: 200px;
+    height: 250px;
     object-fit: cover;
     border-radius: 5px;
     flex-shrink: 0;
@@ -213,8 +249,8 @@ nav ul li a:hover {
     .menu {
         display: none;
         position: absolute;
-        top: 90px;
-        right: 0;
+        top: 100px; 
+        right: -20px; 
         width: 200px;
         background: rgb(236, 236, 236);
         padding: 10px;
