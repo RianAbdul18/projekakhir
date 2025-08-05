@@ -1,36 +1,69 @@
-// Menampilkan pesan saat tombol "Daftar Sekarang" diklik
-function showMessage() {
-    alert("Terima kasih atas minat Anda! Silakan hubungi kami untuk informasi pendaftaran.");
-}
+document.addEventListener('DOMContentLoaded', () => {
+     // Hamburger menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const menu = document.querySelector('.menu');
 
-// Menampilkan detail program (di program.html)
-function showProgramDetails(program) {
-    let message;
-    switch (program) {
-        case 'IPA':
-            message = "Program IPA menawarkan pembelajaran intensif di bidang biologi, fisika, dan kimia dengan fasilitas laboratorium modern.";
-            break;
-        case 'IPS':
-            message = "Program IPS mengajarkan dinamika sosial, ekonomi, dan budaya melalui studi kasus dan proyek interdisipliner.";
-            break;
-        case 'Ekstrakurikuler':
-            message = "Ekstrakurikuler di MTS Darul Falah mencakup berbagai klub seperti robotika, paduan suara, dan tim basket.";
-            break;
-        default:
-            message = "Program tidak dikenali.";
+    if (hamburger && menu) {
+        hamburger.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+            hamburger.setAttribute('aria-expanded', !isExpanded);
+        });
+    const sliderContainer = document.querySelector('.slider-container');
+    if (!sliderContainer) {
+        console.error('Slider container tidak ditemukan.');
+        return;
+    }}
+
+    const images = document.querySelectorAll('.slider-image');
+    if (images.length === 0) {
+        console.error('Gambar slider tidak ditemukan.');
+        return;
     }
-    alert(message);
-}
 
-// Smooth scrolling untuk navigasi
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    });
+    const totalImages = images.length; // Total 3 gambar
+    const transitionDuration = 600; // Durasi transisi dalam ms
+    let currentIndex = 0;
+
+    function slideNext() {
+        currentIndex++;
+        sliderContainer.style.transition = `transform ${transitionDuration}ms ease-in-out`;
+        sliderContainer.style.transform = `translateX(-${currentIndex * (100 / totalImages)}%)`;
+
+        // Reset ke posisi awal tanpa transisi saat mencapai gambar terakhir
+        if (currentIndex === totalImages) {
+            setTimeout(() => {
+                sliderContainer.style.transition = 'none';
+                currentIndex = 0;
+                sliderContainer.style.transform = `translateX(0%)`;
+                requestAnimationFrame(() => {
+                    setTimeout(() => {
+                        sliderContainer.style.transition = `transform ${transitionDuration}ms ease-in-out`;
+                    }, 50);
+                });
+            }, transitionDuration);
+        }
+    }
+
+    // Ganti gambar setiap 5 detik
+    let slideInterval = setInterval(slideNext, 5000);
+
+    // Jeda slideshow saat hover
+    sliderContainer.addEventListener('mouseenter', () => {
+        clearInterval(slideInterval);
+    });
+
+    sliderContainer.addEventListener('mouseleave', () => {
+        slideInterval = setInterval(slideNext, 5000);
+    });
+
+    // Jeda saat halaman tidak aktif
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            clearInterval(slideInterval);
+        } else {
+            slideInterval = setInterval(slideNext, 5000);
+        }
+    });
 });
