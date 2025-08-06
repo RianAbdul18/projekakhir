@@ -1,17 +1,20 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     // Hamburger menu toggle
     const hamburger = document.querySelector('.hamburger');
     const menu = document.querySelector('.menu');
 
     if (hamburger && menu) {
+        hamburger.setAttribute('aria-expanded', 'false');
         hamburger.addEventListener('click', () => {
-            menu.classList.toggle('active');
-            hamburger.classList.toggle('active');
             const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
             hamburger.setAttribute('aria-expanded', !isExpanded);
+            hamburger.classList.toggle('active');
+            menu.classList.toggle('active');
         });
     }
 
+    // Slider functionality
     const sliderContainer = document.querySelector('.slider-container');
     if (!sliderContainer) {
         console.error('Slider container tidak ditemukan.');
@@ -27,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalImages = images.length;
     const transitionDuration = 300;
     let currentIndex = 0;
+    let slideInterval;
 
     function updateSlider() {
         sliderContainer.style.transition = `transform ${transitionDuration}ms ease-in-out`;
@@ -34,41 +38,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function slideNext() {
-        console.log(`Berpindah ke gambar indeks: ${currentIndex}`);
-        currentIndex++;
-        if (currentIndex >= totalImages) {
-            currentIndex = 0;
-            sliderContainer.style.transition = 'none';
-            sliderContainer.style.transform = `translateX(0%)`;
-            requestAnimationFrame(() => {
-                setTimeout(() => {
-                    sliderContainer.style.transition = `transform ${transitionDuration}ms ease-in-out`;
-                    updateSlider();
-                }, 50);
-            });
-        } else {
-            updateSlider();
-        }
+        currentIndex = (currentIndex + 1) % totalImages;
+        updateSlider();
     }
 
-    // Ganti gambar setiap 5 detik secara otomatis
-    let slideInterval = setInterval(slideNext, 5000);
-
-    // Jeda slideshow saat hover
-    sliderContainer.addEventListener('mouseenter', () => {
-        clearInterval(slideInterval);
-    });
-
-    sliderContainer.addEventListener('mouseleave', () => {
+    function startSlider() {
         slideInterval = setInterval(slideNext, 5000);
-    });
+    }
 
-    // Jeda saat halaman tidak aktif
+    function stopSlider() {
+        clearInterval(slideInterval);
+    }
+
+    // Initialize slider
+    startSlider();
+
+    // Pause on hover
+    sliderContainer.addEventListener('mouseenter', stopSlider);
+    sliderContainer.addEventListener('mouseleave', startSlider);
+
+    // Pause when page is not visible
     document.addEventListener('visibilitychange', () => {
         if (document.hidden) {
-            clearInterval(slideInterval);
+            stopSlider();
         } else {
-            slideInterval = setInterval(slideNext, 5000);
+            startSlider();
         }
     });
 });

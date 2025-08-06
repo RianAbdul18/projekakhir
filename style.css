@@ -1,23 +1,32 @@
+
+:root {
+    --primary-color: #007bff;
+    --hover-color: #d2691e;
+    --background-nav: #ececec;
+    --background-content: #ffffff;
+    --background-section: #ceeaf0;
+    --text-color: #333;
+    --text-secondary: #555;
+    --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 * {
-    text-decoration: none;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
+
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-repeat: no-repeat;
+    background: var(--background-content);
 }
 
 nav {
     width: 100%;
-    margin: auto;
-    display: flex;
-    line-height: 60px;
     position: fixed;
-    justify-content: space-between;
     top: 0;
-    background: rgb(236, 236, 236);
+    background: var(--background-nav);
     box-shadow: 5px 3px 5px 2px rgba(103, 99, 99, 0.2);
     z-index: 1000;
 }
@@ -25,19 +34,21 @@ nav {
 .wrapper {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 95%;
+    margin: 0 auto;
     height: 90px;
-    margin: 10px auto;
-    position: relative;
 }
 
 .judul {
-    display: flex;
     font-size: 30px;
     font-weight: 600;
-    margin-left: 20px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: rgb(6, 6, 6);
+    color: var(--text-color);
+}
+
+.judul a {
+    color: inherit;
 }
 
 .hamburger {
@@ -53,7 +64,7 @@ nav {
     display: block;
     width: 25px;
     height: 3px;
-    background: rgb(0, 0, 0);
+    background: var(--text-color);
     margin: 5px 0;
     transition: all 0.3s ease-in-out;
 }
@@ -72,187 +83,135 @@ nav {
 
 .menu {
     display: flex;
-    margin-right: 40px;
-    padding-top: 30px;
+    align-items: center;
 }
 
 nav ul {
     display: flex;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 0;
+    list-style: none;
 }
 
 nav ul li a {
-    color: rgb(0, 0, 0);
+    color: var(--text-color);
     font-weight: bold;
-    align-items: center;
     padding: 20px;
-    text-decoration: none;
     transition: all 0.3s ease-in-out;
 }
 
 nav ul li a:hover {
-    color: chocolate;
-    background-color: rgba(210, 105, 30, 0.1);
-    transform: scale(1.1);
-    text-decoration: none;
-}
-
-.tombol1 {
-    background-color: blue;
-    color: rgb(255, 255, 255);
-    margin-left: 30px;
-    border-radius: 10px;
-    transition: all 0.3s ease-in-out;
-}
-
-.tombol1:hover {
     background-color: chocolate;
     color: rgb(255, 255, 255) !important;
     transform: scale(1.05);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+.tombol1 {
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.tombol1:hover {
+    background: var(--hover-color);
+    transform: scale(1.05);
+    box-shadow: var(--shadow);
+}
+
 .hero-slider {
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
 }
 
 .slider-container {
-  display: flex;
-  width: 300%; 
-  animation: slideAnim 15s infinite;
+    display: flex;
+    width: 300%;
 }
 
 .slider-item {
-  width: 100%;
-  flex-shrink: 0;
+    width: 100%;
+    flex-shrink: 0;
 }
 
 .slider-image {
-  width: 33%;
-  height: 100vh;
-  object-fit: cover;
+    width: 33%;
+    height: 100vh;
+    object-fit: cover;
 }
-
-@keyframes slideAnim {
-  0%   { transform: translateX(0%); }
-  33%  { transform: translateX(0%); }
-  36%  { transform: translateX(-100%); }
-  66%  { transform: translateX(-100%); }
-  69%  { transform: translateX(-200%); }
-  99%  { transform: translateX(-200%); }
-  100% { transform: translateX(0%); }
-}
-
 
 .content-container {
     width: 100%;
     padding: 20px 0;
-    background: #fdfdfd;
+    background: var(--background-content);
 }
 
 .container {
-    width: 98%;
+    width: 95%;
     margin: 20px auto;
-    min-height: 200px;
-    background: #ffffff;
-    border-radius: 0;
-    box-shadow: none;
     padding: 0 15px;
 }
 
 .section-1 {
-    background: #ffffff;
-    width: 100%;
+    background: var(--background-content);
     padding: 20px;
     border-radius: 5px;
-    text-align: left;
     margin-bottom: 20px;
 }
 
 .section-1 h3 {
     margin: 10px 0;
-    text-align: left;
+    color: var(--text-color);
 }
 
 .agenda-sekolah {
     display: flex;
     overflow-x: auto;
-    gap: 30px;
-    padding: 30px;
+    gap: 20px;
+    padding: 20px;
     scroll-behavior: smooth;
 }
 
 .agenda-rincian {
     background: cyan;
     width: 300px;
-    padding: 10px;
+    padding: 15px;
     border-radius: 5px;
     flex-shrink: 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow);
 }
 
 .agenda-rincian h4 {
-    margin-top: 10px;
-    padding-bottom: 10px;
-    font-size: 15px;
-    color: black;
+    font-size: 16px;
+    color: var(--text-color);
+    margin-bottom: 10px;
 }
 
 .agenda-rincian p {
-    margin: 5px 0;
-    font-size: 15px;
-    margin: 5px;
-}
-/* Pastikan responsivitas */
-@media screen and (max-width: 768px) {
-    .agenda-rincian {
-        width: 250px; /* Kurangi lebar untuk layar kecil */
-    }
+    font-size: 14px;
+    color: var(--text-secondary);
 }
 
 .inner-section {
-    background: #ceeaf0;
-    width: 100%;
+    background: var(--background-section);
     padding: 20px;
     border-radius: 5px;
     margin-bottom: 20px;
 }
 
-.inner-section:first-child {
-    padding-top: 20px;
-}
-
-.inner-section:last-child {
-    margin-bottom: 0;
-}
-
-
 .staff-gallery {
     display: flex;
     overflow-x: auto;
-    overflow-y: hidden;
-    /* width: 100%; */
-    height: 420px;
-    gap: 30px;
+    gap: 20px;
     padding: 20px 0;
     scroll-behavior: smooth;
 }
 
 .staff-item {
-    margin-top: 10px;
-    font-size: 14px;
-    font-weight: bold;
-    color: #333;
     text-align: center;
+    flex-shrink: 0;
 }
 
 .staff-image {
@@ -260,38 +219,65 @@ nav ul li a:hover {
     height: 300px;
     object-fit: cover;
     border-radius: 5px;
-    flex-shrink: 0;
 }
 
 .staff-name {
-    margin-top: 10px;
     font-size: 14px;
     font-weight: bold;
-    color: #333;
-    text-align: center;
+    color: var(--text-color);
+    margin: 10px 0 5px;
 }
 
 .staff-role {
-    margin: 5px 0 0 0;
     font-size: 12px;
-    color: #555;
-    text-align: center;
+    color: var(--text-secondary);
 }
 
-/* Responsivitas untuk perangkat mobile */
-@media screen and (max-width: 768px) {
-    .staff-gallery {
-        height: fit-content;
-    }
-    .staff-image {
-        width: 150px;
-        height: 150px;
-    }
+.facilities-gallery {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 0;
+    scroll-behavior: smooth;
+}
 
-    .staff-nama {
-        font-size: 12px;
-        margin-top: 8px;
-    }
+.facility-item {
+    background: var(--background-section);
+    width: 500px;
+    padding: 15px;
+    border-radius: 5px;
+    flex-shrink: 0;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+}
+
+.facility-image {
+    width: 70%;
+    height: 250px;
+}
+
+.facility-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px 0 0 5px;
+}
+
+.facility-text {
+    width: 30%;
+    padding: 0 15px;
+}
+
+.facility-text h4 {
+    font-size: 18px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.facility-text p {
+    font-size: 14px;
+    color: var(--text-secondary);
 }
 
 @media screen and (max-width: 768px) {
@@ -302,12 +288,12 @@ nav ul li a:hover {
     .menu {
         display: none;
         position: absolute;
-        top: 100px; 
-        right: -20px; 
+        top: 90px;
+        right: 0;
         width: 200px;
-        background: rgb(236, 236, 236);
+        background: var(--background-nav);
         padding: 10px;
-        box-shadow: 3px 5px 5px rgba(103, 99, 99, 0.2);
+        box-shadow: var(--shadow);
     }
 
     .menu.active {
@@ -318,10 +304,6 @@ nav ul li a:hover {
         flex-direction: column;
     }
 
-    nav ul li {
-        margin: 10px 0;
-    }
-
     nav ul li a {
         padding: 10px;
         width: 100%;
@@ -329,17 +311,43 @@ nav ul li a:hover {
     }
 
     .tombol1 {
-        margin-left: 0;
         width: 100%;
         text-align: center;
     }
 
-    .wrapper {
-        flex-wrap: wrap;
+    .agenda-rincian {
+        width: 250px;
+    }
+
+    .staff-gallery {
+        height: auto;
     }
 
     .staff-image {
         width: 150px;
-        height: 150px;
+        height: 200px;
+    }
+
+    .staff-name {
+        font-size: 12px;
+    }
+
+    .staff-role {
+        font-size: 11px;
+    }
+
+    .facility-item {
+        width: 300px;
+        flex-direction: column;
+    }
+
+    .facility-image {
+        width: 100%;
+        height: 200px;
+    }
+
+    .facility-text {
+        width: 100%;
+        padding: 15px 0;
     }
 }
