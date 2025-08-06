@@ -187,7 +187,7 @@ nav ul li a:hover {
     padding: 10px;
     border-radius: 5px;
     flex-shrink: 0;
-    
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .agenda-rincian h4 {
@@ -198,12 +198,13 @@ nav ul li a:hover {
 }
 
 .agenda-rincian p {
+    margin: 5px 0;
     font-size: 15px;
     margin: 5px;
 }
 /* Pastikan responsivitas */
 @media screen and (max-width: 768px) {
-    .agenda-item {
+    .agenda-rincian {
         width: 250px; /* Kurangi lebar untuk layar kecil */
     }
 }
@@ -244,6 +245,22 @@ nav ul li a:hover {
     flex-shrink: 0;
 }
 
+.staff-item {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+.staff-image {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
 .staff-name {
     margin-top: 10px;
     font-size: 14px;
@@ -252,14 +269,24 @@ nav ul li a:hover {
     text-align: center;
 }
 
+.staff-role {
+    margin: 5px 0 0 0;
+    font-size: 12px;
+    color: #555;
+    text-align: center;
+}
+
 /* Responsivitas untuk perangkat mobile */
 @media screen and (max-width: 768px) {
+    .staff-gallery {
+        height: fit-content;
+    }
     .staff-image {
         width: 150px;
         height: 150px;
     }
 
-    .staff-name {
+    .staff-nama {
         font-size: 12px;
         margin-top: 8px;
     }
