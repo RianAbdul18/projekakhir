@@ -228,6 +228,9 @@ nav ul li a:hover {
 .staff-gallery {
     display: flex;
     overflow-x: auto;
+    overflow-y: hidden;
+    /* width: 100%; */
+    height: 330px;
     gap: 30px;
     padding: 20px 0;
     scroll-behavior: smooth;
@@ -239,6 +242,27 @@ nav ul li a:hover {
     object-fit: cover;
     border-radius: 5px;
     flex-shrink: 0;
+}
+
+.staff-name {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+/* Responsivitas untuk perangkat mobile */
+@media screen and (max-width: 768px) {
+    .staff-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .staff-name {
+        font-size: 12px;
+        margin-top: 8px;
+    }
 }
 
 @media screen and (max-width: 768px) {
