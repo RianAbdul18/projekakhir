@@ -289,11 +289,11 @@ nav ul li a:hover {
         display: none;
         position: absolute;
         top: 90px;
-        right: 0;
+        right: -20px;
         width: 200px;
-        background: var(--background-nav);
+        background: rgb(236, 236, 236);
         padding: 10px;
-        box-shadow: var(--shadow);
+        box-shadow: 3px 5px 5px rgba(103, 99, 99, 0.2);
     }
 
     .menu.active {
@@ -304,15 +304,23 @@ nav ul li a:hover {
         flex-direction: column;
     }
 
+    nav ul li {
+        margin: 20px 0;
+    }
+
     nav ul li a {
         padding: 10px;
         width: 100%;
         text-align: center;
     }
-
+    
     .tombol1 {
         width: 100%;
         text-align: center;
+    }
+
+    .wrapper {
+        flex-wrap: wrap;
     }
 
     .agenda-rincian {
