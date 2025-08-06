@@ -119,29 +119,39 @@ nav ul li a:hover {
 }
 
 .hero-slider {
-    margin-top: 90px;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
 
 .slider-container {
-    display: flex;
-    width: calc(100% * 3); /* Sesuaikan dengan jumlah gambar */
-    height: 600px;
-    transition: transform 300ms ease-in-out; /* Sesuaikan dengan transitionDuration di JS */
+  display: flex;
+  width: 300%; 
+  animation: slideAnim 15s infinite;
 }
 
 .slider-item {
-    width: 33.33%;
-    height: 100%;
+  width: 100%;
+  flex-shrink: 0;
 }
 
 .slider-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 33%;
+  height: 100vh;
+  object-fit: cover;
 }
+
+@keyframes slideAnim {
+  0%   { transform: translateX(0%); }
+  33%  { transform: translateX(0%); }
+  36%  { transform: translateX(-100%); }
+  66%  { transform: translateX(-100%); }
+  69%  { transform: translateX(-200%); }
+  99%  { transform: translateX(-200%); }
+  100% { transform: translateX(0%); }
+}
+
 
 .content-container {
     width: 100%;
