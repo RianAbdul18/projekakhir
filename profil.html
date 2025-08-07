@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MTs Darul Falah</title>
+    <title>Profil - MTs Darul Falah</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
         <div class="wrapper">
             <div class="judul"><a href="index.html">MTs Darul Falah</a></div>
@@ -17,9 +18,26 @@
             </button>
             <div class="menu">
                 <ul>
-                    <li><a href="index.html" aria-current="page">Beranda</a></li>
-                    <li><a href="profil.html">Profil</a></li>
-                    <li><a href="ekskul.html">Ekstrakurikuler</a></li>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li class="dropdown">
+                        <a href="profil.html" class="profile-link" aria-current="page">Profil</a>
+                        <ul class="submenu">
+                            <li><a href="#profil-sekolah">Profil Sekolah</a></li>
+                            <li><a href="#sejarah-singkat">Sejarah Singkat</a></li>
+                            <li><a href="#staf-pengajar">Staf Pengajar</a></li>
+                            <li><a href="#visi-misi">Visi, Misi & Tujuan</a></li>
+                            <li><a href="#staf-kependidikan">Staf Tenaga Kependidikan</a></li>
+                            <li><a href="#fasilitas">Fasilitas</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="ekskul.html">Ekstrakurikuler</a>
+                        <ul class="submenu">
+                            <li><a href="#">Pramuka</a></li>
+                            <li><a href="#">Hadrah</a></li>
+                            <li><a href="#">Paskibra</a></li>
+                        </ul>
+                    </li>
                     <li><a href="galeri.html">Galeri</a></li>
                     <li><a href="kontak.html">Kontak</a></li>
                     <li><a href="daftar.html" class="tombol1">PPDB</a></li>
@@ -27,6 +45,78 @@
             </div>
         </div>
     </nav>
+
+    <!-- Hero Slider -->
+    <section class="hero-slider" aria-label="Slider Gambar Profil">
+        <div class="slider-container">
+            <div class="slider-item">
+                <img src="img/gambar-1.jpg" alt="Pemandangan gedung utama MTs Darul Falah" class="slider-image">
+            </div>
+            <div class="slider-item">
+                <img src="img/gambar-4.jpg" alt="Aktivitas siswa di MTs Darul Falah" class="slider-image">
+            </div>
+            <div class="slider-item">
+                <img src="img/gambar-5.jpg" alt="Fasilitas sekolah MTs Darul Falah" class="slider-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <section class="content-container">
+        <div class="container">
+            <!-- Profil Sekolah -->
+            <section id="profil-sekolah" class="section-1" aria-label="Profil Sekolah">
+                <h3>Profil Sekolah</h3>
+                <p>
+                    MTs Darul Falah Cukangbungur adalah lembaga pendidikan menengah pertama yang berkomitmen untuk memberikan pendidikan berkualitas berbasis nilai-nilai Islami. Didirikan pada tahun [tahun pendirian], sekolah ini telah menjadi salah satu institusi ternama di wilayah Cukangbungur, Jawa Barat.
+                </p>
+                <p>
+                    Dengan fasilitas modern dan tenaga pengajar yang kompeten, MTs Darul Falah terus berupaya mencetak generasi unggul yang berakhlak mulia dan berprestasi akademik.
+                </p>
+            </section>
+
+            <!-- Sejarah Singkat -->
+            <section id="sejarah-singkat" class="section-1" aria-label="Sejarah Singkat">
+                <h3>Sejarah Singkat</h3>
+                <p>
+                    MTs Darul Falah didirikan pada tahun 2005 oleh sekelompok ulama dan pendidik setempat dengan tujuan menyediakan pendidikan Islami yang terjangkau. Sekolah ini berkembang pesat seiring dengan dukungan masyarakat dan pemerintah daerah.
+                </p>
+            </section>
+
+            <!-- Staf Pengajar -->
+            <section id="staf-pengajar" class="section-1" aria-label="Staf Pengajar">
+                <h3>Staf Pengajar</h3>
+                <p>
+                    Tim pengajar MTs Darul Falah terdiri dari profesional yang berkualifikasi S.Pd. dan S.Ag., dengan keahlian di berbagai bidang seperti TIK, Bahasa Arab, dan Matematika.
+                </p>
+            </section>
+
+            <!-- Visi, Misi & Tujuan -->
+            <section id="visi-misi" class="section-1" aria-label="Visi, Misi & Tujuan">
+                <h3>Visi, Misi & Tujuan</h3>
+                <p>
+                    Visi: Menjadi lembaga pendidikan unggulan berbasis Islami. Misi: Menyelenggarakan pembelajaran berkualitas dan membentuk karakter siswa.
+                </p>
+            </section>
+
+            <!-- Staf Tenaga Kependidikan -->
+            <section id="staf-kependidikan" class="section-1" aria-label="Staf Tenaga Kependidikan">
+                <h3>Staf Tenaga Kependidikan</h3>
+                <p>
+                    Staf kependidikan mendukung operasional sekolah, termasuk administrasi dan kebersihan, untuk menciptakan lingkungan belajar yang kondusif.
+                </p>
+            </section>
+
+            <!-- Fasilitas -->
+            <section id="fasilitas" class="section-1" aria-label="Fasilitas">
+                <h3>Fasilitas</h3>
+                <p>
+                    Fasilitas meliputi ruang kelas modern, laboratorium IPA, dan perpustakaan yang dilengkapi buku edukasi terbaru.
+                </p>
+            </section>
+        </div>
+    </section>
+
     <script src="main.js"></script>
 </body>
 </html>
