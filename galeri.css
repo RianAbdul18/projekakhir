@@ -1,0 +1,99 @@
+
+.navbar-galeri {
+    width: 100%;
+    background: #1766a3;
+    padding: 24px 0 24px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 0;
+    margin-top: 90px;
+}
+.navbar-galeri span {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-left: 48px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+}
+.galeri-section {
+    background: #fff;
+    padding: 40px 0 60px 0;
+}
+.galeri-section h2 {
+    color: #1766a3;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 32px;
+    text-align: left;
+    padding-left: 48px;
+}
+.galeri-container {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.galeri-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    width: 370px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 24px;
+    transition: box-shadow 0.2s;
+    position: relative;
+}
+.galeri-card:hover {
+    box-shadow: 0 4px 24px rgba(23,102,163,0.13);
+}
+.galeri-img {
+    width: 100%;
+    height: 220px;
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    background: #eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.galeri-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.galeri-placeholder {
+    background: #888;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 500;
+    justify-content: center;
+}
+.galeri-placeholder span:first-child {
+    z-index: 1;
+}
+.galeri-icon {
+    position: absolute;
+    right: 18px;
+    bottom: 16px;
+    font-size: 2.2rem;
+    color: #fff;
+    background: rgba(234, 237, 239, 0.85);
+    border-radius: 8px;
+    padding: 2px 8px;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.galeri-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #232323;
+    text-align: center;
+    margin: 24px 0 16px 0;
+    padding: 0 12px;
+}
