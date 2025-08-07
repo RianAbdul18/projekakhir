@@ -107,6 +107,7 @@ nav ul li a:hover {
 
 .tombol1 {
     background: var(--primary-color);
+    margin-left: 30px;
     color: #fff;
     border-radius: 10px;
     padding: 10px 20px;
@@ -233,6 +234,50 @@ nav ul li a:hover {
     color: var(--text-secondary);
 }
 
+.berita-gallery {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 0;
+    scroll-behavior: smooth;
+}
+
+.berita-item {
+    background:white;
+    width: 400px;
+    padding: 15px;
+    border-radius: 5px;
+    flex-shrink: 0;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.berita-image {
+    width: 100%;
+    height: 250px;
+}
+
+.berita-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px 0 0 5px;
+}
+
+.berita-text {
+    width: 100%;
+    padding: 0 15px;
+}
+
+.berita-text h4 {
+    margin-top: 10px;
+    font-size: 18px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
 .facilities-gallery {
     display: flex;
     overflow-x: auto;
@@ -289,7 +334,7 @@ nav ul li a:hover {
         display: none;
         position: absolute;
         top: 90px;
-        right: -20px;
+        right: 20px;
         width: 200px;
         background: rgb(236, 236, 236);
         padding: 10px;
@@ -315,6 +360,7 @@ nav ul li a:hover {
     }
     
     .tombol1 {
+        margin-left: 5px;
         width: 100%;
         text-align: center;
     }
