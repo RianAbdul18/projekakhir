@@ -1,3 +1,26 @@
+/* Info UTS Box */
+.info-uts {
+  background: #cceeff;
+  border-radius: 12px;
+  margin: 24px auto 0 auto;
+  max-width: 500px;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.uts-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.uts-text a {
+  color: #111;
+  text-decoration: underline;
+}
+.uts-text {
+  flex: 1;
+}
 
 :root {
     --primary-color: #007bff;
@@ -172,8 +195,11 @@ nav ul li a:hover {
     gap: 20px;
     padding: 20px;
     scroll-behavior: smooth;
+    font-size: 20px;
 }
-
+.agenda sekolah {
+     font-size: 50px;
+}
 .agenda-rincian {
     background: cyan;
     width: 300px;
@@ -359,3 +385,59 @@ nav ul li a:hover {
         padding: 15px 0;
     }
 }
+
+footer {
+            background-color: #0d47ff;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            padding: 30px 50px;
+            flex-wrap: wrap;
+        }
+
+        .footer-left {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+        }
+
+        .footer-left img {
+            width: 80px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .footer-left h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            margin-right: 10px;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-right h4 {
+            margin-bottom: 10px;
+        }
+
+        .footer-right a {
+            color: white;
+            text-decoration: none;
+            margin-bottom: 6px;
+        }
+
+        .footer-right a:hover {
+            text-decoration: underline;
+        }
