@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MTs Darul Falah</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
 <body>
     <nav>
         <div class="wrapper">
@@ -19,8 +19,25 @@
             <div class="menu">
                 <ul>
                     <li><a href="index.html" aria-current="page">Beranda</a></li>
-                    <li><a href="profil.html">Profil</a></li>
-                    <li><a href="ekskul.html">Ekstrakurikuler</a></li>
+                    <li class="dropdown">
+                        <a href="profil.html">Profil</a>
+                        <ul class="submenu">
+                            <li><a href="#">Profil Sekolah</a></li>
+                            <li><a href="#">Sejarah Singkat</a></li>
+                            <li><a href="#">Staf Pengajar</a></li>
+                            <li><a href="#">Visi, Misi & Tujuan</a></li>
+                            <li><a href="#">Staf Tenaga Kependidikan</a></li>
+                            <li><a href="#">Fasilitas</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="ekskul.html">Ekstrakurikuler</a>
+                        <ul class="submenu">
+                            <li><a href="#">Pramuka</a></li>
+                            <li><a href="#">Hadrah</a></li>
+                            <li><a href="#">Paskibra</a></li>
+                        </ul>
+                    </li>
                     <li><a href="galeri.html">Galeri</a></li>
                     <li><a href="kontak.html">Kontak</a></li>
                     <li><a href="daftar.html" class="tombol1">PPDB</a></li>
@@ -49,12 +66,12 @@
                 <h3>Agenda</h3>
                 <div class="agenda-sekolah">
                     <div class="agenda-rincian">
-                        <h4> <i class="fa-solid fa-calendar-days" style="margin-right:8px;color:#1976d2;"></i>Matsama</h4>
+                        <h4>Matsama</h4>
                         <p>Tanggal: 12 Agustus 2025</p>
                         <p>Deskripsi: Kegiatan Matsama untuk siswa baru MTs Darul Falah</p>
                     </div>
                     <div class="agenda-rincian">
-                        <h4><i class="fa-solid fa-calendar-days" style="margin-right:8px;color:#1976d2;"></i>Ulangan Tengah Semester</h4>
+                        <h4>Ulangan Tengah Semester</h4>
                         <p>Tanggal: 15 Juli 2025</p>
                         <p>Deskripsi: Ulangan Tengah Semester seluruh mata pelajaran</p>
                     </div>
@@ -217,29 +234,10 @@
                         </div>
                     </div>
                 </div>
-            </section>  
+            </section>
         </div>
     </section>
-   <footer>
-    <div class="footer-left">
-        <img src="img/Logo.jpg" alt="Logo Sekolah">
-        <h3>MTs Darul Falah Cukang Bungur</h3>
-        <p><strong>Social Media</strong></p>
-        <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-facebook" style="color:#1877F2;"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram" style="color:#E1306C;"></i></a>
-            <a href="#"><i class="fa-brands fa-youtube" style="color:#FF0000;"></i></a>
-            <a href="#"><i class="fa-brands fa-whatsapp" style="color:#25D366;"></i></a>
-        </div>
-    </div>
-    <div class="footer-right">
-        <h4><strong>Profil Sekolah</strong></h4>
-        <a href="#">Fasilitas</a>
-        <a href="#">Visi, Misi dan Tujuan</a>
-        <a href="#">Staf Pengajar</a>
-        <a href="#">Staf Tenaga Pendidikan</a>
-    </div>
-</footer>
+
     <script src="main.js"></script>
 </body>
 </html>
