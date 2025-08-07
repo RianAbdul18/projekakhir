@@ -1,26 +1,4 @@
-/* Info UTS Box */
-.info-uts {
-  background: #cceeff;
-  border-radius: 12px;
-  margin: 24px auto 0 auto;
-  max-width: 500px;
-  padding: 18px 24px;
-  display: flex;
-  align-items: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-}
-.uts-box {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-}
-.uts-text a {
-  color: #111;
-  text-decoration: underline;
-}
-.uts-text {
-  flex: 1;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 :root {
     --primary-color: #007bff;
@@ -31,8 +9,11 @@
     --text-color: #333;
     --text-secondary: #555;
     --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --accent-color: #ff7f50;
+    --highlight-color: #00ffff;
 }
 
+/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -45,12 +26,13 @@ body {
     background: var(--background-content);
 }
 
+/* Navigation Styles */
 nav {
     width: 100%;
     position: fixed;
     top: 0;
     background: var(--background-nav);
-    box-shadow: 5px 3px 5px 2px rgba(103, 99, 99, 0.2);
+    box-shadow: 0 3px 5px rgba(103, 99, 99, 0.2);
     z-index: 1000;
 }
 
@@ -114,6 +96,10 @@ nav ul {
     list-style: none;
 }
 
+nav ul li {
+    position: relative;
+}
+
 nav ul li a {
     color: var(--text-color);
     font-weight: bold;
@@ -122,10 +108,10 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: chocolate;
-    color: rgb(255, 255, 255) !important;
+    background-color: var(--accent-color);
+    color: #fff;
     transform: scale(1.05);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow);
 }
 
 .tombol1 {
@@ -143,6 +129,43 @@ nav ul li a:hover {
     box-shadow: var(--shadow);
 }
 
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--background-nav);
+    box-shadow: var(--shadow);
+    min-width: 200px;
+    z-index: 1001;
+}
+
+.dropdown:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    padding: 10px;
+}
+
+.submenu li a {
+    display: block;
+    padding: 10px;
+    color: var(--text-color);
+    font-weight: normal;
+}
+
+.submenu li a:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+/* Slider Styles */
 .hero-slider {
     width: 100%;
     height: 100vh;
@@ -152,7 +175,8 @@ nav ul li a:hover {
 
 .slider-container {
     display: flex;
-    width: 300%;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
 }
 
 .slider-item {
@@ -161,11 +185,12 @@ nav ul li a:hover {
 }
 
 .slider-image {
-    width: 33%;
+    width: 100%;
     height: 100vh;
     object-fit: cover;
 }
 
+/* Content Styles */
 .content-container {
     width: 100%;
     padding: 20px 0;
@@ -178,31 +203,28 @@ nav ul li a:hover {
     padding: 0 15px;
 }
 
-.section-1 {
+.section-1, .inner-section {
     background: var(--background-content);
     padding: 20px;
     border-radius: 5px;
     margin-bottom: 20px;
 }
 
-.section-1 h3 {
+.section-1 h3, .inner-section h3 {
     margin: 10px 0;
     color: var(--text-color);
 }
 
-.agenda-sekolah {
+.agenda-sekolah, .staff-gallery, .berita-gallery, .facilities-gallery {
     display: flex;
     overflow-x: auto;
     gap: 20px;
     padding: 20px;
     scroll-behavior: smooth;
-    font-size: 20px;
 }
-.agenda sekolah {
-     font-size: 50px;
-}
+
 .agenda-rincian {
-    background: cyan;
+    background: var(--highlight-color);
     width: 300px;
     padding: 15px;
     border-radius: 5px;
@@ -219,21 +241,6 @@ nav ul li a:hover {
 .agenda-rincian p {
     font-size: 14px;
     color: var(--text-secondary);
-}
-
-.inner-section {
-    background: var(--background-section);
-    padding: 20px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-
-.staff-gallery {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 20px 0;
-    scroll-behavior: smooth;
 }
 
 .staff-item {
@@ -260,16 +267,8 @@ nav ul li a:hover {
     color: var(--text-secondary);
 }
 
-.berita-gallery {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 20px 0;
-    scroll-behavior: smooth;
-}
-
 .berita-item {
-    background:white;
+    background: var(--background-content);
     width: 400px;
     padding: 15px;
     border-radius: 5px;
@@ -289,27 +288,19 @@ nav ul li a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 5px 0 0 5px;
+    border-radius: 5px 5px 0 0;
 }
 
 .berita-text {
+    font-family: 'Roboto', sans-serif;
     width: 100%;
     padding: 0 15px;
 }
 
 .berita-text h4 {
-    margin-top: 10px;
+    margin: 10px 0;
     font-size: 18px;
     color: var(--text-color);
-    margin-bottom: 10px;
-}
-
-.facilities-gallery {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 20px 0;
-    scroll-behavior: smooth;
 }
 
 .facility-item {
@@ -351,6 +342,7 @@ nav ul li a:hover {
     color: var(--text-secondary);
 }
 
+/* Responsive Design */
 @media screen and (max-width: 768px) {
     .hamburger {
         display: block;
@@ -362,9 +354,9 @@ nav ul li a:hover {
         top: 90px;
         right: 20px;
         width: 200px;
-        background: rgb(236, 236, 236);
+        background: var(--background-nav);
         padding: 10px;
-        box-shadow: 3px 5px 5px rgba(103, 99, 99, 0.2);
+        box-shadow: 0 3px 5px rgba(103, 99, 99, 0.2);
     }
 
     .menu.active {
@@ -376,7 +368,7 @@ nav ul li a:hover {
     }
 
     nav ul li {
-        margin: 20px 0;
+        margin: 10px 0;
     }
 
     nav ul li a {
@@ -384,23 +376,25 @@ nav ul li a:hover {
         width: 100%;
         text-align: center;
     }
-    
+
     .tombol1 {
-        margin-left: 5px;
+        margin-left: 0;
         width: 100%;
         text-align: center;
     }
 
-    .wrapper {
-        flex-wrap: wrap;
+    .dropdown .submenu {
+        position: static;
+        display: none;
+        width: 100%;
+    }
+
+    .dropdown.active .submenu {
+        display: block;
     }
 
     .agenda-rincian {
         width: 250px;
-    }
-
-    .staff-gallery {
-        height: auto;
     }
 
     .staff-image {
@@ -431,59 +425,3 @@ nav ul li a:hover {
         padding: 15px 0;
     }
 }
-
-footer {
-            background-color: #0d47ff;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            padding: 30px 50px;
-            flex-wrap: wrap;
-        }
-
-        .footer-left {
-            display: flex;
-            flex-direction: column;
-            max-width: 300px;
-        }
-
-        .footer-left img {
-            width: 80px;
-            height: auto;
-            margin-bottom: 15px;
-        }
-
-        .footer-left h3 {
-            margin: 0;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .social-icons {
-            margin-top: 10px;
-        }
-
-        .social-icons a {
-            margin-right: 10px;
-            text-decoration: none;
-            font-size: 20px;
-        }
-
-        .footer-right {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .footer-right h4 {
-            margin-bottom: 10px;
-        }
-
-        .footer-right a {
-            color: white;
-            text-decoration: none;
-            margin-bottom: 6px;
-        }
-
-        .footer-right a:hover {
-            text-decoration: underline;
-        }
