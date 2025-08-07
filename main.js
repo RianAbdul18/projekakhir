@@ -1,6 +1,5 @@
-
 document.addEventListener('DOMContentLoaded', () => {
-    // Hamburger menu toggle
+    // Hamburger Menu Functionality
     const hamburger = document.querySelector('.hamburger');
     const menu = document.querySelector('.menu');
 
@@ -11,19 +10,28 @@ document.addEventListener('DOMContentLoaded', () => {
             hamburger.setAttribute('aria-expanded', !isExpanded);
             hamburger.classList.toggle('active');
             menu.classList.toggle('active');
+
+            // Toggle submenu visibility on mobile
+            if (window.innerWidth <= 768) {
+                const dropdowns = menu.querySelectorAll('.dropdown');
+                dropdowns.forEach(dropdown => {
+                    dropdown.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                    });
+                });
+            }
         });
+    } else {
+        console.error('Hamburger atau menu tidak ditemukan.');
     }
 
-    // Slider functionality
+    // Slider Functionality
     const sliderContainer = document.querySelector('.slider-container');
-    if (!sliderContainer) {
-        console.error('Slider container tidak ditemukan.');
-        return;
-    }
-
     const images = document.querySelectorAll('.slider-image');
-    if (images.length === 0) {
-        console.error('Gambar slider tidak ditemukan.');
+    
+    if (!sliderContainer || images.length === 0) {
+        console.error('Slider container atau gambar tidak ditemukan.');
         return;
     }
 
@@ -32,37 +40,34 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
     let slideInterval;
 
-    function updateSlider() {
+    const updateSlider = () => {
         sliderContainer.style.transition = `transform ${transitionDuration}ms ease-in-out`;
         sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
+    };
 
-    function slideNext() {
+    const slideNext = () => {
         currentIndex = (currentIndex + 1) % totalImages;
         updateSlider();
-    }
+    };
 
-    function startSlider() {
+    const startSlider = () => {
         slideInterval = setInterval(slideNext, 5000);
-    }
+    };
 
-    function stopSlider() {
+    const stopSlider = () => {
         clearInterval(slideInterval);
-    }
+    };
 
-    // Initialize slider
+    // Initialize Slider
+    updateSlider();
     startSlider();
 
-    // Pause on hover
+    // Slider Controls
     sliderContainer.addEventListener('mouseenter', stopSlider);
     sliderContainer.addEventListener('mouseleave', startSlider);
 
-    // Pause when page is not visible
+    // Handle Page Visibility
     document.addEventListener('visibilitychange', () => {
-        if (document.hidden) {
-            stopSlider();
-        } else {
-            startSlider();
-        }
+        document.hidden ? stopSlider() : startSlider();
     });
 });
