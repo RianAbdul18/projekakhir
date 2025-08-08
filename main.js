@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Hamburger Menu Functionality
     const hamburger = document.querySelector('.hamburger');
     const menu = document.querySelector('.menu');
 
@@ -10,8 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hamburger.setAttribute('aria-expanded', !isExpanded);
             hamburger.classList.toggle('active');
             menu.classList.toggle('active');
-
-            // Toggle submenu visibility on mobile
+            
             if (window.innerWidth <= 768) {
                 const dropdowns = menu.querySelectorAll('.dropdown');
                 dropdowns.forEach(dropdown => {
