@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokumentasi Hari Kebangkitan Nasional 2025</title>
+    <link rel="stylesheet" href="dokumentasi-harkitnas.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="wrapper">
+            <div class="judul"><a href="index.html">MTs Darul Falah</a></div>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="profil.html">Profil</a></li>
+                    <li><a href="ekskul.html">Ekstrakurikuler</a></li>
+                    <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                    <li><a href="daftar.html" class="tombol1">PPDB</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="navbar-kegiatan">
+            <span>Dokumentasi Hari Kebangkitan Nasional (Harkitnas) 2025</span>
+        </div>
+        <section class="kegiatan-section">
+            <div class="kegiatan-content">
+                <div class="kegiatan-img-container">
+                    <div class="slideshow-container">
+                        <div class="slide fade">
+                            <img class="slideshow-img" src="img/gambar-1.jpg" alt="Upacara Harkitnas 2025-1">
+                        </div>
+                        <div class="slide fade">
+                            <img class="slideshow-img" src="img/gambar-2.jpg" alt="Upacara Harkitnas 2025-2">
+                        </div>
+                        <div class="slide fade">
+                            <img class="slideshow-img" src="img/gambar-4.jpg" alt="Upacara Harkitnas 2025-3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+    let slideIndex = 0;
+    showSlides();
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("slide");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        if(slides.length > 0) slides[slideIndex-1].style.display = "block";
+        setTimeout(showSlides, 3000);
+    }
+    </script>
+</body>
+</html>

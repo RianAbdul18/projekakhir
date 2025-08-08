@@ -1,3 +1,12 @@
+.galeri-link {
+    color: #232323;
+    text-decoration: none;
+    font-weight: 700;
+}
+.galeri-link:hover, .galeri-link:active, .galeri-link:focus {
+    color: #1766a3;
+    text-decoration: underline;
+}
 
 .navbar-galeri {
     width: 100%;
@@ -92,7 +101,7 @@
 .galeri-title {
     font-size: 1.35rem;
     font-weight: 700;
-    color: #232323;
+    color: #191818;
     text-align: center;
     margin: 24px 0 16px 0;
     padding: 0 12px;

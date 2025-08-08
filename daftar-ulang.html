@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kegiatan Daftar Ulang 2025/2026</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="daftar-ulang.css">
+</head>
+<body>
+    <nav>
+        <div class="wrapper">
+            <div class="judul"><a href="index.html">MTs Darul Falah</a></div>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="profil.html">Profil</a></li>
+                    <li><a href="ekskul.html">Ekstrakurikuler</a></li>
+                    <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                    <li><a href="daftar.html" class="tombol1">PPDB</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="navbar-kegiatan navbar-kegiatan-center">
+            <span>Kegiatan Daftar Ulang Murid Baru Tahun Ajaran 2025/2026</span>
+        </div>
+        <section class="kegiatan-section kegiatan-section-center">
+            <div class="slideshow-container">
+                <div class="slide fade">
+                    <img src="img/gambar-1.jpg" class="slideshow-img" alt="Foto Kegiatan 1">
+                </div>
+                <div class="slide fade">
+                    <img src="img/gambar-2.jpg" class="slideshow-img" alt="Foto Kegiatan 2">
+                </div>
+                <div class="slide fade">
+                    <img src="img/gambar-4.jpg" class="slideshow-img" alt="Foto Kegiatan 3">
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("slide");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        if(slides.length > 0) slides[slideIndex-1].style.display = "block";
+        setTimeout(showSlides, 3000);
+    }
+
+    function previewFoto() {
+        const input = document.getElementById('fotoInput');
+        const preview = document.getElementById('previewArea');
+        preview.innerHTML = '';
+        Array.from(input.files).forEach(file => {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                img.style.maxWidth = '150px';
+                img.style.margin = '5px';
+                preview.appendChild(img);
+            }
+            reader.readAsDataURL(file);
+        });
+    }
+    </script>
+    </main>
+</body>
+</html>
