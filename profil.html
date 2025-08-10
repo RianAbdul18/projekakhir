@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Profil MTs Darul Falah, sekolah menengah berbasis Islami di Cukangbungur.">
+    <meta name="keywords" content="MTs Darul Falah, sekolah Islami, pendidikan, Cukangbungur">
     <title>Profil - MTs Darul Falah</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="profil.css">
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
+    <nav role="navigation">
         <div class="wrapper">
-            <div class="judul"><a href="index.html">MTs Darul Falah</a></div>
+            <div class="judul">
+                <img src="img/Logo-removebg-preview.png" alt="Logo MTs Darul Falah" class="logo" loading="lazy" onerror="this.src='img/fallback.jpg'">
+                <a href="index.html">MTs Darul Falah</a>
+            </div>
             <button class="hamburger" aria-label="Buka menu navigasi">
                 <span></span>
                 <span></span>
@@ -20,7 +25,7 @@
                 <ul>
                     <li><a href="index.html">Beranda</a></li>
                     <li class="dropdown">
-                        <a href="profil.html" class="profile-link" aria-current="page">Profil</a>
+                        <a href="profil.html" class="profile-link" aria-current="page" aria-expanded="false">Profil</a>
                         <ul class="submenu">
                             <li><a href="#profil-sekolah">Profil Sekolah</a></li>
                             <li><a href="#sejarah-singkat">Sejarah Singkat</a></li>
@@ -31,11 +36,11 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="ekskul.html">Ekstrakurikuler</a>
+                        <a href="ekskul.html" aria-expanded="false">Ekstrakurikuler</a>
                         <ul class="submenu">
-                            <li><a href="#">Pramuka</a></li>
-                            <li><a href="#">Hadrah</a></li>
-                            <li><a href="#">Paskibra</a></li>
+                            <li><a href="ekskul.html#pramuka">Pramuka</a></li>
+                            <li><a href="ekskul.html#hadrah">Hadrah</a></li>
+                            <li><a href="ekskul.html#paskibra">Paskibra</a></li>
                         </ul>
                     </li>
                     <li><a href="galeri.html">Galeri</a></li>
@@ -46,29 +51,14 @@
         </div>
     </nav>
 
-    <!-- Hero Slider -->
-    <section class="hero-slider" aria-label="Slider Gambar Profil">
-        <div class="slider-container">
-            <div class="slider-item">
-                <img src="img/gambar-1.jpg" alt="Pemandangan gedung utama MTs Darul Falah" class="slider-image">
-            </div>
-            <div class="slider-item">
-                <img src="img/gambar-4.jpg" alt="Aktivitas siswa di MTs Darul Falah" class="slider-image">
-            </div>
-            <div class="slider-item">
-                <img src="img/gambar-5.jpg" alt="Fasilitas sekolah MTs Darul Falah" class="slider-image">
-            </div>
-        </div>
-    </section>
-
     <!-- Content Sections -->
-    <section class="content-container">
-        <div class="container">
+    <section class="profile-content">
+        <div class="profile-container">
             <!-- Profil Sekolah -->
-            <section id="profil-sekolah" class="section-1" aria-label="Profil Sekolah">
+            <section id="profil-sekolah" class="profile-section active" aria-label="Profil Sekolah">
                 <h3>Profil Sekolah</h3>
                 <p>
-                    MTs Darul Falah Cukangbungur adalah lembaga pendidikan menengah pertama yang berkomitmen untuk memberikan pendidikan berkualitas berbasis nilai-nilai Islami. Didirikan pada tahun [tahun pendirian], sekolah ini telah menjadi salah satu institusi ternama di wilayah Cukangbungur, Jawa Barat.
+                    MTs Darul Falah Cukangbungur adalah lembaga pendidikan menengah pertama yang berkomitmen untuk memberikan pendidikan berkualitas berbasis nilai-nilai Islami. Didirikan pada tahun 2005, sekolah ini telah menjadi salah satu institusi ternama di wilayah Cukangbungur, Jawa Barat.
                 </p>
                 <p>
                     Dengan fasilitas modern dan tenaga pengajar yang kompeten, MTs Darul Falah terus berupaya mencetak generasi unggul yang berakhlak mulia dan berprestasi akademik.
@@ -76,7 +66,7 @@
             </section>
 
             <!-- Sejarah Singkat -->
-            <section id="sejarah-singkat" class="section-1" aria-label="Sejarah Singkat">
+            <section id="sejarah-singkat" class="profile-section" aria-label="Sejarah Singkat">
                 <h3>Sejarah Singkat</h3>
                 <p>
                     MTs Darul Falah didirikan pada tahun 2005 oleh sekelompok ulama dan pendidik setempat dengan tujuan menyediakan pendidikan Islami yang terjangkau. Sekolah ini berkembang pesat seiring dengan dukungan masyarakat dan pemerintah daerah.
@@ -84,15 +74,105 @@
             </section>
 
             <!-- Staf Pengajar -->
-            <section id="staf-pengajar" class="section-1" aria-label="Staf Pengajar">
+            <section id="staf-pengajar" class="profile-section" aria-label="Staf Pengajar">
                 <h3>Staf Pengajar</h3>
-                <p>
-                    Tim pengajar MTs Darul Falah terdiri dari profesional yang berkualifikasi S.Pd. dan S.Ag., dengan keahlian di berbagai bidang seperti TIK, Bahasa Arab, dan Matematika.
-                </p>
+                <div class="profile-staff-gallery">
+                    <div class="profile-staff-item">
+                        <img src="img/pak-ismail.jpg" alt="Foto Ismail, Guru TIK" class="profile-staff-image" loading="lazy" onerror="this.src='img/fallback.jpg'">
+                        <p class="profile-staff-name">Ismail, S.Pd.I.</p>
+                        <p class="profile-staff-role">Guru TIK</p>
+                    </div>
+                    <div class="profile-staff-item">
+                        <img src="img/guru-12.jpg" alt="Foto Tita Rosita, Guru SKI dan PPKn" class="profile-staff-image" loading="lazy" onerror="this.src='img/fallback.jpg'">
+                        <p class="profile-staff-name">Tita Rosita, S.Pd.I.</p>
+                        <p class="profile-staff-role">Guru SKI, PPKn</p>
+                    </div>
+                    <div class="profile-staff-item">
+                        <img src="img/bu-wiwin.jpg" alt="Foto Wiwin, Guru Bahasa Indonesia" class="profile-staff-image" loading="lazy" onerror="this.src='img/fallback.jpg'">
+                        <p class="profile-staff-name">Wiwin, S.Pd.I.</p>
+                        <p class="profile-staff-role">Guru B. Indonesia</p>
+                    </div>
+                    <div class="profile-staff-item">
+                        <img src="img/guru-9.jpg" alt="Foto Ade Siti Juwariah, Guru Bahasa Arab" class="profile-staff-image" loading="lazy" onerror="this.src='img/fallback.jpg'">
+                        <p class="profile-staff-name">Ade Siti Juwariah, S.Pd.I.</p>
+                        <p class="profile-staff-role">Guru B. Arab</p>
+                    </div>
+                    <div class="profile-staff-item">
+                        <img src="img/guru-16.jpg" alt="Foto Euis Siti Rohimah, Guru Matematika" class="profile-staff-image" loading="lazy" onerror="this.src='img/fallback.jpg'">
+                        <p class="profile-staff-name">Euis Siti Rohimah, S.Ag.</p>
+                        <p class="profile-staff-role">Guru Matematika</p>
+                    </div>
+                    <div class="profile-staff-item">
+                        <img src="img/guru-17.jpg" alt="Foto Hj. Elis, Guru TIK" class="profile-staff-image" loading="lazy" onerror="this.src='img/fallback.jpg'">
+                        <p class="profile-staff-name">Hj. Elis, S.Pd.I.</p>
+                        <p class="profile-staff-role">Guru TIK</p>
+                    </div>
+                    <div class="profile-staff-item">
+                        <img src="img/guru-2.jpg" alt="Foto Cucu, Guru Fikih dan Seni Budaya" class="profile-staff-image" loading="lazy" onerror="this.src='img/fallback.jpg'">
+                        <p class="profile-staff-name">Cucu, S.Pd.I.</p>
+                        <p class="profile-staff-role">Guru Fikih, Seni Budaya</p>
+                    </div>
+                    <div class="profile-staff-item">
+                        <img src="img/guru-13.jpg" alt="Foto Anis Suryani, Guru TIK" class="profile-staff-image" loading="lazy" onerror="this.src='img/fallback.jpg'">
+                        <p class="profile-staff-name">Anis Suryani, S.Pd.</p>
+                        <p class="profile-staff-role">Guru TIK</p>
+                    </div>
+                    <div class="profile-staff-item">
+                        <img src="img/guru-8.jpg" alt="Foto Firman Fitriyana, Guru IPS" class="profile-staff-image" loading="lazy" onerror="this.src='img/fallback.jpg'">
+                        <p class="profile-staff-name">Firman Fitriyana, S.Sos.</p>
+                        <p class="profile-staff-role">Guru IPS</p>
+                    </div>
+                    <div class="profile-staff-item">
+                        <img src="img/guru-11.jpg" alt="Foto Ai Ermala, Guru TIK" class="profile-staff-image" loading="lazy" onerror="this.src='img/fallback.jpg'">
+                        <p class="profile-staff-name">Ai Ermala, S.Th.I.</p>
+                        <p class="profile-staff-role">Guru TIK</p>
+                    </div>
+                    <div class="profile-staff-item">
+                        <img src="img/guru-18.jpg" alt="Foto Enung Nurhayati, Guru TIK" class="profile-staff-image" loading="lazy" onerror="this.src='img/fallback.jpg'">
+                        <p class="profile-staff-name">Enung Nurhayati, SHI.</p>
+                        <p class="profile-staff-role">Guru TIK</p>
+                    </div>
+                    <div class="profile-staff-item">
+                        <img src="img/guru-4.jpg" alt="Foto Rini Kurniasih, Guru Prakarya" class="profile-staff-image" loading="lazy" onerror="this.src='img/fallback.jpg'">
+                        <p class="profile-staff-name">Rini Kurniasih, S.P.</p>
+                        <p class="profile-staff-role">Guru Prakarya</p>
+                    </div>
+                    <div class="profile-staff-item">
+                        <img src="img/bu-enung.jpg" alt="Foto Enung Kuraesin, Guru Bahasa Arab" class="profile-staff-image" loading="lazy" onerror="this.src='img/fallback.jpg'">
+                        <p class="profile-staff-name">Enung Kuraesin, S.Pd.I.</p>
+                        <p class="profile-staff-role">Guru B. Arab</p>
+                    </div>
+                    <div class="profile-staff-item">
+                        <img src="img/bu-ira.jpg" alt="Foto Ira Aprilia, Guru Bahasa Arab" class="profile-staff-image" loading="lazy" onerror="this.src='img/fallback.jpg'">
+                        <p class="profile-staff-name">Ira Aprilia, S.Pd.</p>
+                        <p class="profile-staff-role">Guru B. Arab</p>
+                    </div>
+                    <div class="profile-staff-item">
+                        <img src="img/guru-3.jpg" alt="Foto Tati Rosita, Guru Bahasa Inggris" class="profile-staff-image" loading="lazy" onerror="this.src='img/fallback.jpg'">
+                        <p class="profile-staff-name">Tati Rosita, S.Pd.I.</p>
+                        <p class="profile-staff-role">Guru B. Inggris</p>
+                    </div>
+                    <div class="profile-staff-item">
+                        <img src="img/guru-6.jpg" alt="Foto Pipih Sopiati, Guru PPKn dan Bahasa Inggris" class="profile-staff-image" loading="lazy" onerror="this.src='img/fallback.jpg'">
+                        <p class="profile-staff-name">Pipih Sopiati, S.Pd.</p>
+                        <p class="profile-staff-role">Guru PPKn, B. Inggris</p>
+                    </div>
+                    <div class="profile-staff-item">
+                        <img src="img/pngtree-red-background-simple-solid-color-picture-image_1323818.jpg" alt="Foto Rosita, Guru SKI dan PPKn" class="profile-staff-image" loading="lazy" onerror="this.src='img/fallback.jpg'">
+                        <p class="profile-staff-name">Rosita, S.Pd.</p>
+                        <p class="profile-staff-role">Guru SKI, PPKn</p>
+                    </div>
+                    <div class="profile-staff-item">
+                        <img src="img/pngtree-red-background-simple-solid-color-picture-image_1323818.jpg" alt="Foto Andri, Guru Penjasorkes" class="profile-staff-image" loading="lazy" onerror="this.src='img/fallback.jpg'">
+                        <p class="profile-staff-name">Andri</p>
+                        <p class="profile-staff-role">Guru Penjasorkes</p>
+                    </div>
+                </div>
             </section>
+               
 
             <!-- Visi, Misi & Tujuan -->
-            <section id="visi-misi" class="section-1" aria-label="Visi, Misi & Tujuan">
+            <section id="visi-misi" class="profile-section" aria-label="Visi, Misi & Tujuan">
                 <h3>Visi, Misi & Tujuan</h3>
                 <p>
                     Visi: Menjadi lembaga pendidikan unggulan berbasis Islami. Misi: Menyelenggarakan pembelajaran berkualitas dan membentuk karakter siswa.
@@ -100,7 +180,7 @@
             </section>
 
             <!-- Staf Tenaga Kependidikan -->
-            <section id="staf-kependidikan" class="section-1" aria-label="Staf Tenaga Kependidikan">
+            <section id="staf-kependidikan" class="profile-section" aria-label="Staf Tenaga Kependidikan">
                 <h3>Staf Tenaga Kependidikan</h3>
                 <p>
                     Staf kependidikan mendukung operasional sekolah, termasuk administrasi dan kebersihan, untuk menciptakan lingkungan belajar yang kondusif.
@@ -108,11 +188,28 @@
             </section>
 
             <!-- Fasilitas -->
-            <section id="fasilitas" class="section-1" aria-label="Fasilitas">
+            <section id="fasilitas" class="profile-section" aria-label="Fasilitas">
                 <h3>Fasilitas</h3>
-                <p>
-                    Fasilitas meliputi ruang kelas modern, laboratorium IPA, dan perpustakaan yang dilengkapi buku edukasi terbaru.
-                </p>
+                <div class="profile-facilities-gallery">
+                    <div class="profile-facility-item">
+                        <div class="profile-facility-image">
+                            <img src="img/lab-ipa.jpg" alt="Laboratorium IPA" class="profile-facility-img" loading="lazy" onerror="this.src='img/fallback.jpg'">
+                        </div>
+                        <div class="profile-facility-text">
+                            <h4>Laboratorium IPA</h4>
+                            <p>Ruang modern untuk eksperimen sains.</p>
+                        </div>
+                    </div>
+                    <div class="profile-facility-item">
+                        <div class="profile-facility-image">
+                            <img src="img/perpustakaan.jpg" alt="Perpustakaan" class="profile-facility-img" loading="lazy" onerror="this.src='img/fallback.jpg'">
+                        </div>
+                        <div class="profile-facility-text">
+                            <h4>Perpustakaan</h4>
+                            <p>Koleksi buku edukasi terbaru.</p>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
     </section>
