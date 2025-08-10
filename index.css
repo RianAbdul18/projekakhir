@@ -5,12 +5,10 @@
     --hover-color: #d2691e;
     --background-nav: #ececec;
     --background-content: #ffffff;
-    --background-section: #ceeaf0;
     --text-color: #333;
     --text-secondary: #555;
     --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     --accent-color: #ff7f50;
-    --highlight-color: #00ffff;
 }
 
 /* Reset and Base Styles */
@@ -42,19 +40,44 @@ nav {
     align-items: center;
     width: 95%;
     margin: 0 auto;
-    height: 90px;
+    height: 100px;
 }
 
 .judul {
-    font-size: 30px;
+    display: flex;
+    font-size: 20px;
     font-weight: 600;
+    align-items: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: var(--text-color);
 }
 
-.judul a {
-    color: inherit;
+.logo {
+    height: 70px;
+    margin-right: 10px;
+    margin-left: 40px;
 }
+
+.nama1 {
+    display: flex;
+    flex-direction: column;
+    margin-left: -300px;
+}
+.nama1 a {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 40px;
+    color: #103481;
+    padding: 0;
+    font-weight: bold;
+}
+
+.nama1 o {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    color: #103481;
+    padding: 0;
+}
+
 
 .hamburger {
     display: none;
@@ -110,8 +133,6 @@ nav ul li a {
 nav ul li a:hover {
     background-color: var(--accent-color);
     color: #fff;
-    transform: scale(1.05);
-    box-shadow: var(--shadow);
 }
 
 .tombol1 {
@@ -125,8 +146,6 @@ nav ul li a:hover {
 
 .tombol1:hover {
     background: var(--hover-color);
-    transform: scale(1.05);
-    box-shadow: var(--shadow);
 }
 
 /* Dropdown Styles */
@@ -145,7 +164,8 @@ nav ul li a:hover {
     z-index: 1001;
 }
 
-.dropdown:hover .submenu {
+.dropdown:hover .submenu,
+.dropdown.active .submenu {
     display: block;
 }
 
@@ -175,13 +195,14 @@ nav ul li a:hover {
 
 .slider-container {
     display: flex;
-    width: 300%;
-    transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
 }
 
 .slider-item {
-    width: 100vw;
+    width: 100%;
     flex-shrink: 0;
+    position: relative;
 }
 
 .slider-image {
@@ -189,6 +210,109 @@ nav ul li a:hover {
     height: 100vh;
     object-fit: cover;
 }
+
+.slider-text {
+    position: absolute;
+    top: 56%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 2.5rem;
+    
+    float: left;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.slider-text {
+    width: 98%;
+    height: 610px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px 20px ;
+    border-radius: 5px;
+}
+
+.slider-text h2 {
+    text-decoration: underline;
+    margin-top: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 60px;
+    margin-bottom: 80px;
+    font-weight: bold;
+}
+
+.slider-text p {
+    margin-top: 5px;
+    font-size: 30px;
+}
+.slider-item.active .slider-text {
+    opacity: 1;
+}
+
+.slider-prev, .slider-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    transition: background 0.3s ease-in-out;
+}
+
+.slider-prev:hover, .slider-next:hover {
+    background: var(--accent-color);
+}
+
+.slider-prev {
+    left: 20px;
+}
+
+.slider-next {
+    right: 20px;
+}
+
+.pidato {
+    position: absolute;
+    margin-left: 40px;
+    width: 95%;
+    height: 300px;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    z-index: 998;
+    margin-top: -80px;
+}
+
+.sambutan {
+    display: flex;
+}
+
+.pidato img {
+    width: 100px;
+    border-radius: 100%;
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.pidato h2 {
+    font-size: 25px;
+    font-weight: bold;
+    /* margin: 10px 0 0 300px;
+    padding-top: -100px;
+    padding-bottom: 40px; */
+}
+.pidato a {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    /* margin: 10px 20px 0 400px;
+    text-decoration: none; */
+}
+
 
 /* Content Styles */
 .content-container {
@@ -200,40 +324,37 @@ nav ul li a:hover {
 .container {
     width: 95%;
     margin: 20px auto;
-    padding: 0 15px;
+    padding: 200px 15px 0;
 }
 
-.section-1, .inner-section {
-    background: var(--background-content);
+.inner-section {
+    background: #d8e8f8;
     padding: 20px;
     border-radius: 5px;
     margin-bottom: 20px;
 }
 
-.section-1 h3, .inner-section h3 {
+.inner-section h3 {
     margin: 10px 0;
     color: var(--text-color);
 }
 
-.agenda-sekolah, .staff-gallery, .berita-gallery, .facilities-gallery {
+.agenda-sekolah {
     display: flex;
-    overflow-x: auto;
+    flex-wrap: wrap;
     gap: 20px;
-    padding: 20px;
-    scroll-behavior: smooth;
 }
 
 .agenda-rincian {
-    background: var(--highlight-color);
-    width: 300px;
+    background: #fff;
     padding: 15px;
     border-radius: 5px;
-    flex-shrink: 0;
+    /* flex: 1 1 300px; */
     box-shadow: var(--shadow);
 }
 
 .agenda-rincian h4 {
-    font-size: 16px;
+    font-size: 18px;
     color: var(--text-color);
     margin-bottom: 10px;
 }
@@ -241,6 +362,14 @@ nav ul li a:hover {
 .agenda-rincian p {
     font-size: 14px;
     color: var(--text-secondary);
+}
+
+.staff-gallery {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+    scroll-behavior: smooth;
 }
 
 .staff-item {
@@ -267,10 +396,18 @@ nav ul li a:hover {
     color: var(--text-secondary);
 }
 
+.berita-gallery {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+    scroll-behavior: smooth;
+}
+
 .berita-item {
-    background: var(--background-content);
+    background: #fff;
     width: 400px;
-    padding: 15px;
+    padding: 0;
     border-radius: 5px;
     flex-shrink: 0;
     box-shadow: var(--shadow);
@@ -288,25 +425,32 @@ nav ul li a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 5px 5px 0 0;
+    border-radius: 5px 0 0 5px;
 }
 
 .berita-text {
-    font-family: 'Roboto', sans-serif;
     width: 100%;
     padding: 0 15px;
 }
 
 .berita-text h4 {
-    margin: 10px 0;
     font-size: 18px;
     color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.facilities-gallery {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+    scroll-behavior: smooth;
 }
 
 .facility-item {
-    background: var(--background-section);
+    background: rgb(7, 189, 249);
     width: 500px;
-    padding: 15px;
+    padding: 0;
     border-radius: 5px;
     flex-shrink: 0;
     box-shadow: var(--shadow);
@@ -339,7 +483,7 @@ nav ul li a:hover {
 
 .facility-text p {
     font-size: 14px;
-    color: var(--text-secondary);
+    color: black;
 }
 
 /* Responsive Design */
@@ -368,7 +512,7 @@ nav ul li a:hover {
     }
 
     nav ul li {
-        margin: 10px 0;
+        margin: 20px 0;
     }
 
     nav ul li a {
@@ -378,7 +522,7 @@ nav ul li a:hover {
     }
 
     .tombol1 {
-        margin-left: 0;
+        margin-left: 5px;
         width: 100%;
         text-align: center;
     }
@@ -393,8 +537,14 @@ nav ul li a:hover {
         display: block;
     }
 
-    .agenda-rincian {
-        width: 250px;
+    .slider-text {
+        font-size: 1.5rem;
+        padding: 5px 10px;
+    }
+
+    .slider-prev, .slider-next {
+        font-size: 1rem;
+        padding: 8px;
     }
 
     .staff-image {
@@ -410,17 +560,17 @@ nav ul li a:hover {
         font-size: 11px;
     }
 
-    .facility-item {
+    .berita-item, .facility-item {
         width: 300px;
         flex-direction: column;
     }
 
-    .facility-image {
+    .berita-image, .facility-image {
         width: 100%;
         height: 200px;
     }
 
-    .facility-text {
+    .berita-text, .facility-text {
         width: 100%;
         padding: 15px 0;
     }
