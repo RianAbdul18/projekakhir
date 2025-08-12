@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MTs Darul Falah</title>
+    <title>Kontak | MTs Darul Falah</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="kontak.css">
+    <link rel="stylesheet" href="kontak-foto.css">
 </head>
 <body>
     <nav>
@@ -17,16 +19,56 @@
             </button>
             <div class="menu">
                 <ul>
-                    <li><a href="index.html" aria-current="page">Beranda</a></li>
-                    <li><a href="profil.html">Profil</a></li>
-                    <li><a href="ekskul.html">Ekstrakurikuler</a></li>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li class="dropdown">
+                        <a href="profil.html">Profil</a>
+                        <ul class="submenu">
+                            <li><a href="#">Profil Sekolah</a></li>
+                            <li><a href="#">Sejarah Singkat</a></li>
+                            <li><a href="#">Staf Pengajar</a></li>
+                            <li><a href="#">Visi, Misi & Tujuan</a></li>
+                            <li><a href="#">Staf Tenaga Kependidikan</a></li>
+                            <li><a href="#">Fasilitas</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="ekskul.html">Ekstrakurikuler</a>
+                        <ul class="submenu">
+                            <li><a href="pramuka.html">Pramuka</a></li>
+                            <li><a href="hadrah.html">Hadrah</a></li>
+                            <li><a href="paskibra.html">Paskibra</a></li>
+                        </ul>
+                    </li>
                     <li><a href="galeri.html">Galeri</a></li>
-                    <li><a href="kontak.html">Kontak</a></li>
+                    <li><a href="kontak.html" aria-current="page">Kontak</a></li>
                     <li><a href="daftar.html" class="tombol1">PPDB</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+    <div class="kontak-container">
+        <div class="kontak-card">
+            <img src="img/bersama 1.jpeg" alt="Ruang Kelas MTs Darul Falah" class="kontak-foto">
+            <h1>Kontak</h1>
+            <hr>
+            <h2>Kontak Sekolah</h2>
+            <ul class="kontak-list">
+                <li><span class="icon">&#128205;</span> Jl. Parungponteng</li>
+                <li><span class="icon">&#128222;</span> (0265)7533913</li>
+                <li><span class="icon">&#128241;</span> 082315790666</li>
+                <li><span class="icon">&#9993;</span> mtsndrlcukangbungur@gmail.com</li>
+            </ul>
+            <div class="sosmed-section">
+                <h2>Sosial Media</h2>
+                <ul class="sosmed-list">
+                    <li><span class="icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" alt="Facebook" style="width:20px;height:20px;vertical-align:middle;"></span> <a href="https://www.facebook.com/groups/249746770310250/" target="_blank">https://www.facebook.com/groups/249746770310250/</a></li>
+                    <li><span class="icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram" style="width:20px;height:20px;vertical-align:middle;"></span> <a href="https://www.instagram.com//" target="_blank">https://www.instagram.com/</a></li>
+                    <li><span class="icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="YouTube" style="width:20px;height:20px;vertical-align:middle;"></span> <a href="https://www.youtube.com/" target="_blank">https://www.youtube.com/</a></li>
+                    <li><span class="icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg" alt="TikTok" style="width:20px;height:20px;vertical-align:middle;"></span> <a href="https://www.tiktok.com/" target="_blank">https://www.tiktok.com/</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>
