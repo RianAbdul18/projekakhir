@@ -5,12 +5,10 @@
     --hover-color: #d2691e;
     --background-nav: #ececec;
     --background-content: #ffffff;
-    --background-section: #ceeaf0;
     --text-color: #333;
     --text-secondary: #555;
     --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     --accent-color: #ff7f50;
-    --highlight-color: #00ffff;
 }
 
 /* Reset and Base Styles */
@@ -42,18 +40,25 @@ nav {
     align-items: center;
     width: 95%;
     margin: 0 auto;
-    height: 90px;
+    height: 100px;
 }
 
 .judul {
-    font-size: 30px;
+    display: flex;
+    font-size: 40px;
     font-weight: 600;
+    align-items: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: var(--text-color);
 }
 
+.logo {
+    height: 60px;
+    margin-right: 10px;
+}
+
 .judul a {
-    color: inherit;
+    color: var(--text-color);
 }
 
 .hamburger {
@@ -110,8 +115,6 @@ nav ul li a {
 nav ul li a:hover {
     background-color: var(--accent-color);
     color: #fff;
-    transform: scale(1.05);
-    box-shadow: var(--shadow);
 }
 
 .tombol1 {
@@ -125,8 +128,6 @@ nav ul li a:hover {
 
 .tombol1:hover {
     background: var(--hover-color);
-    transform: scale(1.05);
-    box-shadow: var(--shadow);
 }
 
 /* Dropdown Styles */
@@ -145,7 +146,8 @@ nav ul li a:hover {
     z-index: 1001;
 }
 
-.dropdown:hover .submenu {
+.dropdown:hover .submenu,
+.dropdown.active .submenu {
     display: block;
 }
 
@@ -165,6 +167,8 @@ nav ul li a:hover {
     color: #fff;
 }
 
+<<<<<<< HEAD:profil.css
+=======
 /* Slider Styles */
 .hero-slider {
     width: 100%;
@@ -190,32 +194,71 @@ nav ul li a:hover {
     object-fit: cover;
 }
 
+>>>>>>> ae373cce2ef1d4f1d2dcc6afe924d716c68c034d:style.css
 /* Content Styles */
-.content-container {
+.profile-content {
     width: 100%;
     padding: 20px 0;
     background: var(--background-content);
 }
 
-.container {
+.profile-container {
     width: 95%;
     margin: 20px auto;
-    padding: 0 15px;
+    padding: 100px 15px 0;
 }
 
-.section-1, .inner-section {
-    background: var(--background-content);
+.profile-section {
+    display: none;
+    background: #d8e8f8;
     padding: 20px;
     border-radius: 5px;
     margin-bottom: 20px;
 }
 
-.section-1 h3, .inner-section h3 {
+.profile-section.active {
+    display: block;
+}
+
+.profile-section h3 {
     margin: 10px 0;
     color: var(--text-color);
 }
 
-.agenda-sekolah, .staff-gallery, .berita-gallery, .facilities-gallery {
+.profile-staff-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: auto;
+    gap: 30px;
+    padding: 10px;
+    scroll-behavior: smooth;
+}
+
+.profile-staff-item {
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.profile-staff-image {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.profile-staff-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--text-color);
+    margin: 10px 0 5px;
+}
+
+.profile-staff-role {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.profile-facilities-gallery {
     display: flex;
     overflow-x: auto;
     gap: 20px;
@@ -223,88 +266,8 @@ nav ul li a:hover {
     scroll-behavior: smooth;
 }
 
-.agenda-rincian {
-    background: var(--highlight-color);
-    width: 300px;
-    padding: 15px;
-    border-radius: 5px;
-    flex-shrink: 0;
-    box-shadow: var(--shadow);
-}
-
-.agenda-rincian h4 {
-    font-size: 16px;
-    color: var(--text-color);
-    margin-bottom: 10px;
-}
-
-.agenda-rincian p {
-    font-size: 14px;
-    color: var(--text-secondary);
-}
-
-.staff-item {
-    text-align: center;
-    flex-shrink: 0;
-}
-
-.staff-image {
-    width: 200px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-.staff-name {
-    font-size: 14px;
-    font-weight: bold;
-    color: var(--text-color);
-    margin: 10px 0 5px;
-}
-
-.staff-role {
-    font-size: 12px;
-    color: var(--text-secondary);
-}
-
-.berita-item {
-    background: var(--background-content);
-    width: 400px;
-    padding: 15px;
-    border-radius: 5px;
-    flex-shrink: 0;
-    box-shadow: var(--shadow);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.berita-image {
-    width: 100%;
-    height: 250px;
-}
-
-.berita-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px 5px 0 0;
-}
-
-.berita-text {
-    font-family: 'Roboto', sans-serif;
-    width: 100%;
-    padding: 0 15px;
-}
-
-.berita-text h4 {
-    margin: 10px 0;
-    font-size: 18px;
-    color: var(--text-color);
-}
-
-.facility-item {
-    background: var(--background-section);
+.profile-facility-item {
+    background: rgb(139, 245, 139);
     width: 500px;
     padding: 15px;
     border-radius: 5px;
@@ -314,32 +277,32 @@ nav ul li a:hover {
     align-items: center;
 }
 
-.facility-image {
+.profile-facility-image {
     width: 70%;
     height: 250px;
 }
 
-.facility-img {
+.profile-facility-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 5px 0 0 5px;
 }
 
-.facility-text {
+.profile-facility-text {
     width: 30%;
     padding: 0 15px;
 }
 
-.facility-text h4 {
+.profile-facility-text h4 {
     font-size: 18px;
     color: var(--text-color);
     margin-bottom: 10px;
 }
 
-.facility-text p {
+.profile-facility-text p {
     font-size: 14px;
-    color: var(--text-secondary);
+    color: black;
 }
 
 /* Responsive Design */
@@ -368,7 +331,7 @@ nav ul li a:hover {
     }
 
     nav ul li {
-        margin: 10px 0;
+        margin: 20px 0;
     }
 
     nav ul li a {
@@ -378,7 +341,7 @@ nav ul li a:hover {
     }
 
     .tombol1 {
-        margin-left: 0;
+        margin-left: 5px;
         width: 100%;
         text-align: center;
     }
@@ -393,34 +356,30 @@ nav ul li a:hover {
         display: block;
     }
 
-    .agenda-rincian {
-        width: 250px;
-    }
-
-    .staff-image {
+    .profile-staff-image {
         width: 150px;
         height: 200px;
     }
 
-    .staff-name {
+    .profile-staff-name {
         font-size: 12px;
     }
 
-    .staff-role {
+    .profile-staff-role {
         font-size: 11px;
     }
 
-    .facility-item {
+    .profile-facility-item {
         width: 300px;
         flex-direction: column;
     }
 
-    .facility-image {
+    .profile-facility-image {
         width: 100%;
         height: 200px;
     }
 
-    .facility-text {
+    .profile-facility-text {
         width: 100%;
         padding: 15px 0;
     }
