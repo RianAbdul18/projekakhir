@@ -4,18 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dokumentasi Hari Kebangkitan Nasional 2025</title>
-    <link rel="stylesheet" href="dokumentasi-harkitnas.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="galeri.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <nav>
+    <nav role="navigation">
         <div class="wrapper">
-            <div class="judul"><a href="index.html">MTs Darul Falah</a></div>
+            <div class="judul">
+                <img src="img/Logo-removebg-preview.png" alt="Logo MTs Darul Falah Cukangbungur" class="logo" loading="lazy" onerror="this.src='img/fallback.jpg'">
+            </div>
+            <div class="nama1">
+                <h2>MTs Darul Falah</h2>
+                <a>Cukangbungur</a>
+            </div>
+            <button class="hamburger" aria-label="Buka menu navigasi">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <div class="menu">
                 <ul>
-                    <li><a href="index.html">Beranda</a></li>
-                    <li><a href="profil.html">Profil</a></li>
-                    <li><a href="ekskul.html">Ekstrakurikuler</a></li>
+                    <li><a href="index.html" aria-current="page">Beranda</a></li>
+                    <li class="dropdown">
+                        <a href="profil.html" class="profile-link" aria-expanded="false">Profil</a>
+                        <ul class="submenu">
+                            <li><a href="profil.html#profil-sekolah">Profil Sekolah</a></li>
+                            <li><a href="profil.html#sejarah-singkat">Sejarah Singkat</a></li>
+                            <li><a href="profil.html#visi-misi">Visi, Misi & Tujuan</a></li>
+                            <li><a href="profil.html#staf-pengajar">Staf Pengajar</a></li>
+                            <li><a href="profil.html#staf-kependidikan">Staf Tenaga Kependidikan</a></li>
+                            <li><a href="profil.html#fasilitas">Fasilitas</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="ekskul.html" aria-expanded="false">Ekstrakurikuler</a>
+                        <ul class="submenu">
+                            <li><a href="pramuka.html#pramuka">Pramuka</a></li>
+                            <li><a href="ekskul.html#perisaidiri">Perisai Diri</a></li>
+                            <li><a href="ekskul.html#voli">Voli</a></li>
+                            <li><a href="ekskul.html#marchingband">Marching Band</a></li>
+                            <li><a href="ekskul.html#marawis">Marawis</a></li>
+                            <li><a href="ekskul.html#reabana">Rebana</a></li>
+                        </ul>
+                    </li>
                     <li><a href="galeri.html">Galeri</a></li>
                     <li><a href="kontak.html">Kontak</a></li>
                     <li><a href="daftar.html" class="tombol1">PPDB</a></li>
