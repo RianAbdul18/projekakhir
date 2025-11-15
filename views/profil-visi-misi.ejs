@@ -1,0 +1,20 @@
+<%- include('partials/header') %>
+<% const path = '/profil-visi-misi' %>
+
+<section class="section">
+  <div class="container">
+    <h1 class="section-title">Visi & Misi</h1>
+    <div class="card p-4">
+      <h3>Visi</h3>
+      <p><%= data.isi ? data.isi.split('---')[0] : 'Belum diisi' %></p>
+      <h3 class="mt-4">Misi</h3>
+      <ul>
+        <% (data.isi ? data.isi.split('---')[1] || '' : '').split('\n').filter(m => m).forEach(m => { %>
+          <li><%= m %></li>
+        <% }) %>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
