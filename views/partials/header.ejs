@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= typeof title !== 'undefined' ? title + ' - ' : '' %>MTs Darul Falah</title>
+  <meta name="description" content="<%= typeof description !== 'undefined' ? description : 'Website Resmi MTs Darul Falah - Sekolah Berprestasi Berakhlak Mulia' %>">
+  <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="main-header">
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="/img/logo.png" alt="Logo MTs Darul Falah" />
+        <span>MTs Darul Falah</span>
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="/" class="<%= path === '/' ? 'active' : '' %>">Beranda</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle <%= path && path.includes('profil') ? 'active' : '' %>">Profil</a>
+            <ul class="dropdown-menu">
+              <li><a href="/profil-sekolah">Profil Sekolah</a></li>
+              <li><a href="/profil-visi-misi">Visi Misi</a></li>
+              <li><a href="/profil-sejarah">Sejarah</a></li>
+              <li><a href="/profil-staff">Staff & Guru</a></li>
+              <li><a href="/profil-fasilitas">Fasilitas</a></li>
+            </ul>
+          </li>
+          <li><a href="/berita" class="<%= path === '/berita' ? 'active' : '' %>">Berita</a></li>
+          <li><a href="/galeri" class="<%= path === '/galeri' ? 'active' : '' %>">Galeri</a></li>
+          <li><a href="/ekskul-list" class="<%= path === '/ekskul-list' ? 'active' : '' %>">Ekskul</a></li>
+          <li><a href="/kalender" class="<%= path === '/kalender' ? 'active' : '' %>">Kalender</a></li>
+          <li><a href="/ppdb" class="<%= path === '/ppdb' ? 'active' : '' %>">PPDB</a></li>
+          <li><a href="/kontak" class="<%= path === '/kontak' ? 'active' : '' %>">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
