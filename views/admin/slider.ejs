@@ -1,0 +1,28 @@
+<%- include('../partials/header') %>
+<div class="admin-container">
+  <h1>Kelola Slider</h1>
+  <form action="/admin/slider/create" method="POST" enctype="multipart/form-data" class="mb-4">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <input type="text" name="judul" placeholder="Judul" required />
+    <input type="text" name="subjudul" placeholder="Subjudul" />
+    <input type="file" name="gambar" accept="image/*" required />
+    <input type="text" name="link" placeholder="Link (opsional)" />
+    <input type="number" name="urutan" placeholder="Urutan" value="0" />
+    <button type="submit" class="btn">Tambah</button>
+  </form>
+
+  <div class="grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(250px,1fr)); gap:1rem;">
+    <% sliders.forEach(s => { %>
+      <div class="card">
+        <img src="<%= s.gambar %>" style="width:100%; height:120px; object-fit:cover;" />
+        <div class="p-2">
+          <p><strong><%= s.judul %></strong></p>
+          <form action="/admin/slider/delete/<%= s._id %>" method="POST" style="display:inline">
+            <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+          </form>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</div>
+<%- include('../partials/footer') %>
