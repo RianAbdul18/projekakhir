@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+<div class="admin-container">
+  <h1>Kelola Galeri</h1>
+  <form action="/admin/galeri/create" method="POST" enctype="multipart/form-data" class="mb-4">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <input type="text" name="judul" placeholder="Judul Foto" />
+    <textarea name="deskripsi" placeholder="Deskripsi (opsional)"></textarea>
+    <input type="file" name="gambar" accept="image/*" required />
+    <button type="submit" class="btn">Upload</button>
+  </form>
+
+  <div class="grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,1fr)); gap:1rem;">
+    <% galeri.forEach(g => { %>
+      <div class="card">
+        <img src="<%= g.gambar %>" alt="<%= g.judul %>" style="width:100%; height:150px; object-fit:cover;" />
+        <div class="p-2">
+          <p><strong><%= g.judul %></strong></p>
+          <form action="/admin/galeri/delete/<%= g._id %>" method="POST">
+            <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+          </form>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</div>
+<%- include('../partials/footer') %>
