@@ -1,0 +1,13 @@
+<%- include('partials/header') %>
+<% const path = '/profil-sejarah' %>
+
+<section class="section">
+  <div class="container">
+    <h1 class="section-title">Sejarah Singkat</h1>
+    <div class="card p-4">
+      <p><%= data.isi ? data.isi.replace(/\n/g, '<br>') : 'Belum diisi' %></p>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
