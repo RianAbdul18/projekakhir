@@ -1,0 +1,42 @@
+<%- include('../partials/header') %>
+<div class="admin-container">
+  <h1><%= action === 'create' ? 'Tambah' : 'Edit' %> Profil</h1>
+  <% if (error) { %><div class="alert alert-danger"><%= error %></div><% } %>
+  <form action="/admin/profil/<%= action === 'create' ? 'create' : 'update/' + profil._id %>" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <div class="form-group">
+      <label>Nama</label>
+      <input type="text" name="nama" value="<%= profil.nama || '' %>" required />
+    </div>
+    <div class="form-group">
+      <label>Deskripsi</label>
+      <textarea name="deskripsi" required><%= profil.deskripsi || '' %></textarea>
+    </div>
+    <div class="form-group">
+      <label>Isi (opsional)</label>
+      <textarea name="isi"><%= profil.isi || '' %></textarea>
+    </div>
+    <div class="form-group">
+      <label>Tipe</label>
+      <select name="tipe" required>
+        <option value="sekolah" <%= profil.tipe === 'sekolah' ? 'selected' : '' %>>Sekolah</option>
+        <option value="sejarah" <%= profil.tipe === 'sejarah' ? 'selected' : '' %>>Sejarah</option>
+        <option value="visi-misi" <%= profil.tipe === 'visi-misi' ? 'selected' : '' %>>Visi Misi</option>
+        <option value="staff" <%= profil.tipe === 'staff' ? 'selected' : '' %>>Staff</option>
+        <option value="fasilitas" <%= profil.tipe === 'fasilitas' ? 'selected' : '' %>>Fasilitas</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Foto (opsional)</label>
+      <input type="file" name="foto" accept="image/*" />
+      <% if (profil.foto) { %><img src="<%= profil.foto %>" style="width:100px; margin-top:10px;" /><% } %>
+    </div>
+    <div class="form-group">
+      <label>Urutan</label>
+      <input type="number" name="urutan" value="<%= profil.urutan || 0 %>" min="0" />
+    </div>
+    <button type="submit" class="btn">Simpan</button>
+    <a href="/admin/dashboard" class="btn">Kembali</a>
+  </form>
+</div>
+<%- include('../partials/footer') %>
