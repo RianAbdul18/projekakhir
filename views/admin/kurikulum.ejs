@@ -1,0 +1,39 @@
+<%- include('../partials/header') %>
+<div class="admin-container">
+  <h1>Kelola Kurikulum & RPP</h1>
+  <form action="/admin/kurikulum/create" method="POST" enctype="multipart/form-data" class="mb-4">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <select name="kelas" required>
+      <option value="">Pilih Kelas</option>
+      <option>VII</option><option>VIII</option><option>IX</option>
+    </select>
+    <input type="text" name="mataPelajaran" placeholder="Mata Pelajaran" required />
+    <select name="semester" required>
+      <option value="Ganjil">Ganjil</option>
+      <option value="Genap">Genap</option>
+    </select>
+    <input type="text" name="tahunAjaran" placeholder="2025/2026" required />
+    <input type="file" name="fileRPP" accept=".pdf" />
+    <button type="submit" class="btn">Upload RPP</button>
+  </form>
+
+  <table class="table">
+    <thead><tr><th>Kelas</th><th>Mapel</th><th>Semester</th><th>RPP</th><th>Aksi</th></tr></thead>
+    <tbody>
+      <% kurikulum.forEach(k => { %>
+        <tr>
+          <td><%= k.kelas %></td>
+          <td><%= k.mataPelajaran %></td>
+          <td><%= k.semester %></td>
+          <td><% if (k.fileRPP) { %><a href="<%= k.fileRPP %>" target="_blank">Lihat PDF</a><% } else { %>-<% } %></td>
+          <td>
+            <form action="/admin/kurikulum/delete/<%= k._id %>" method="POST" style="display:inline">
+              <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+<%- include('../partials/footer') %>
