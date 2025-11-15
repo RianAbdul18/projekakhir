@@ -1,0 +1,17 @@
+<%- include('partials/header') %>
+<% const path = '/profil-sekolah' %>
+
+<section class="section">
+  <div class="container">
+    <h1 class="section-title"><%= data.nama %></h1>
+    <div class="grid" style="display:grid; grid-template-columns:1fr 2fr; gap:2rem;">
+      <img src="<%= data.foto || '/img/placeholder.jpg' %>" alt="<%= data.nama %>" style="width:100%; border-radius:12px;" />
+      <div>
+        <p><%= data.deskripsi %></p>
+        <% if (data.isi) { %><div class="mt-4"><%= data.isi.replace(/\n/g, '<br>') %></div><% } %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
