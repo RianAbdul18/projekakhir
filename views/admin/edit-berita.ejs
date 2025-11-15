@@ -1,0 +1,30 @@
+<%- include('../partials/header') %>
+<div class="admin-container">
+  <h1>Kelola Berita</h1>
+  <form action="/admin/berita/create" method="POST" enctype="multipart/form-data" class="mb-4">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <input type="text" name="judul" placeholder="Judul Berita" required style="width:70%;" />
+    <textarea name="isi" placeholder="Isi Berita" required style="width:70%; height:100px;"></textarea>
+    <input type="file" name="gambar" accept="image/*" />
+    <button type="submit" class="btn">Tambah</button>
+  </form>
+
+  <table class="table">
+    <thead><tr><th>Judul</th><th>Gambar</th><th>Tanggal</th><th>Aksi</th></tr></thead>
+    <tbody>
+      <% berita.forEach(b => { %>
+        <tr>
+          <td><%= b.judul %></td>
+          <td><% if (b.gambar) { %><img src="<%= b.gambar %>" style="width:50px;" /><% } else { %>-<% } %></td>
+          <td><%= new Date(b.tanggal).toLocaleDateString('id-ID') %></td>
+          <td>
+            <form action="/admin/berita/delete/<%= b._id %>" method="POST" style="display:inline">
+              <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Hapus berita?')">Hapus</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+<%- include('../partials/footer') %>
