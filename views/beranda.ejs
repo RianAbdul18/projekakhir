@@ -1,0 +1,92 @@
+<%- include('partials/header') %>
+<% const path = '/' %>
+<% const description = 'MTs Darul Falah - Sekolah Berprestasi Berakhlak Mulia' %>
+
+<%- include('partials/hero') %>
+
+<section class="section bg-light">
+  <div class="container">
+    <h2 class="section-title">Sambutan Kepala Sekolah</h2>
+    <div class="grid" style="display:grid; grid-template-columns:1fr 3fr; gap:2rem; align-items:center;">
+      <img src="<%= sambutan.foto || '/img/kepsek.jpg' %>" alt="Kepala Sekolah" style="width:100%; max-width:250px; border-radius:12px;" />
+      <div>
+        <h3><%= sambutan.nama %></h3>
+        <p><%= sambutan.deskripsi %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Berita Terbaru</h2>
+    <div class="grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(300px,1fr)); gap:1.5rem;">
+      <% beritaTerbaru.forEach(b => { %>
+        <div class="card">
+          <div style="height:180px; background:url('<%= b.gambar || '/img/placeholder.jpg' %>') center/cover no-repeat;"></div>
+          <div class="p-3">
+            <h4><%= b.judul %></h4>
+            <p class="text-muted small"><%= new Date(b.tanggal).toLocaleDateString('id-ID') %></p>
+            <a href="/berita" class="btn btn-sm">Baca Selengkapnya</a>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+    <div class="text-center mt-4">
+      <a href="/berita" class="btn">Lihat Semua Berita</a>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-light">
+  <div class="container">
+    <h2 class="section-title">Kalender Akademik</h2>
+    <div class="grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(250px,1fr)); gap:1rem;">
+      <% kalender.forEach(k => { %>
+        <div class="card p-3 text-center">
+          <p class="text-muted small"><%= new Date(k.tanggal).toLocaleDateString('id-ID') %></p>
+          <h5><%= k.judul %></h5>
+          <span class="badge <%= k.jenis === 'ujian' ? 'bg-danger' : k.jenis === 'libur' ? 'bg-success' : 'bg-primary' %>"><%= k.jenis %></span>
+        </div>
+      <% }) %>
+    </div>
+    <div class="text-center mt-4">
+      <a href="/kalender" class="btn">Lihat Kalender Lengkap</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Galeri Kegiatan</h2>
+    <div class="grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,1fr)); gap:1rem;">
+      <% galeriTerbaru.forEach(g => { %>
+        <a href="<%= g.gambar %>" data-lightbox="galeri">
+          <img src="<%= g.gambar %>" alt="<%= g.judul %>" style="width:100%; height:150px; object-fit:cover; border-radius:8px;" />
+        </a>
+      <% }) %>
+    </div>
+    <div class="text-center mt-4">
+      <a href="/galeri" class="btn">Lihat Galeri Lengkap</a>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-light">
+  <div class="container">
+    <h2 class="section-title">Ekstrakurikuler Unggulan</h2>
+    <div class="grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(250px,1fr)); gap:1.5rem;">
+      <% ekskul.forEach(e => { %>
+        <div class="card text-center p-3">
+          <img src="<%= e.foto || '/img/placeholder.jpg' %>" alt="<%= e.nama %>" style="width:80px; height:80px; object-fit:cover; border-radius:50%; margin:0 auto 1rem;" />
+          <h4><%= e.nama %></h4>
+          <p class="text-muted small">Pembina: <%= e.pembina || '—' %></p>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
