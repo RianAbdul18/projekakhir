@@ -1,0 +1,41 @@
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>MTs Darul Falah</h3>
+        <p><strong>NPSN:</strong> 12345678</p>
+        <p><i class="fas fa-map-marker-alt"></i> Jl. Contoh No.123, Kota, Provinsi</p>
+        <p><i class="fas fa-phone"></i> (021) 123-4567</p>
+        <p><i class="fas fa-envelope"></i> info@mtsdarulfalah.sch.id</p>
+      </div>
+      <div>
+        <h3>Tautan Cepat</h3>
+        <ul>
+          <li><a href="/">Beranda</a></li>
+          <li><a href="/ppdb">PPDB</a></li>
+          <li><a href="/berita">Berita</a></li>
+          <li><a href="/kalender">Kalender</a></li>
+          <li><a href="/kontak">Kontak</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Ikuti Kami</h3>
+        <p>
+          <a href="#" class="text-white"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+        </p>
+      </div>
+    </div>
+    <div class="text-center py-3" style="border-top:1px solid rgba(255,255,255,0.2); margin-top:2rem;">
+      <p>&copy; <%= new Date().getFullYear() %> MTs Darul Falah. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/js/submenu.js"></script>
+  <% if (typeof extraScripts !== 'undefined') { %>
+    <% extraScripts.forEach(script => { %>
+      <script src="<%= script %>"></script>
+    <% }) %>
+  <% } %>
+</body>
+</html>
