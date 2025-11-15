@@ -1,0 +1,54 @@
+<%- include('../partials/header') %>
+<% const path = '/admin/dashboard' %>
+<div class="admin-container">
+  <div class="admin-header">
+    <h1>Dashboard Admin</h1>
+    <div>
+      <a href="/admin/profile" class="btn btn-sm">Ganti Password</a>
+      <a href="/admin/logout" class="btn btn-danger btn-sm">Logout</a>
+    </div>
+  </div>
+
+  <div class="grid" style="grid-template-columns:repeat(auto-fill, minmax(200px,1fr)); gap:1rem; margin:2rem 0;">
+    <div class="card p-4 text-center"><h3><%= ppdbCount %></h3><p>Pendaftar PPDB</p><a href="/admin/ppdb" class="btn btn-sm">Lihat</a></div>
+    <div class="card p-4 text-center"><h3><%= beritaCount %></h3><p>Berita</p><a href="/admin/berita" class="btn btn-sm">Kelola</a></div>
+    <div class="card p-4 text-center"><h3><%= galeriCount %></h3><p>Galeri</p><a href="/admin/galeri" class="btn btn-sm">Kelola</a></div>
+    <div class="card p-4 text-center"><h3><%= kalenderCount %></h3><p>Kalender</p><a href="/admin/kalender" class="btn btn-sm">Lihat</a></div>
+  </div>
+
+  <h2>Log Aktivitas Terbaru</h2>
+  <table class="table">
+    <thead><tr><th>Waktu</th><th>Admin</th><th>Aksi</th><th>Detail</th></tr></thead>
+    <tbody>
+      <% logs.forEach(l => { %>
+        <tr>
+          <td><%= new Date(l.createdAt).toLocaleString('id-ID') %></td>
+          <td><%= l.admin?.username || 'Unknown' %></td>
+          <td><%= l.aksi %></td>
+          <td><%= l.detail ? l.detail.substring(0,50) + '...' : '-' %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+  <h2 class="mt-5">Kelola Profil</h2>
+  <a href="/admin/profil/create" class="btn">+ Tambah Profil</a>
+  <table class="table mt-3">
+    <thead><tr><th>Nama</th><th>Tipe</th><th>Aksi</th></tr></thead>
+    <tbody>
+      <% profils.forEach(p => { %>
+        <tr>
+          <td><%= p.nama %></td>
+          <td><%= p.tipe %></td>
+          <td>
+            <a href="/admin/profil/edit/<%= p._id %>" class="btn btn-sm">Edit</a>
+            <form action="/admin/profil/delete/<%= p._id %>" method="POST" style="display:inline">
+              <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Hapus?')">Hapus</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+<%- include('../partials/footer') %>
