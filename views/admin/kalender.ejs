@@ -1,0 +1,36 @@
+<%- include('../partials/header') %>
+<div class="admin-container">
+  <h1>Kelola Kalender Akademik</h1>
+  <form action="/admin/kalender/create" method="POST" class="mb-4">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <input type="text" name="judul" placeholder="Judul Kegiatan" required />
+    <input type="date" name="tanggal" required />
+    <input type="text" name="keterangan" placeholder="Keterangan" />
+    <select name="jenis">
+      <option value="kegiatan">Kegiatan</option>
+      <option value="ujian">Ujian</option>
+      <option value="libur">Libur</option>
+      <option value="rapat">Rapat</option>
+    </select>
+    <button type="submit" class="btn">Tambah</button>
+  </form>
+
+  <table class="table">
+    <thead><tr><th>Tanggal</th><th>Judul</th><th>Jenis</th><th>Aksi</th></tr></thead>
+    <tbody>
+      <% kalender.forEach(k => { %>
+        <tr>
+          <td><%= new Date(k.tanggal).toLocaleDateString('id-ID') %></td>
+          <td><%= k.judul %></td>
+          <td><%= k.jenis %></td>
+          <td>
+            <form action="/admin/kalender/delete/<%= k._id %>" method="POST" style="display:inline">
+              <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+<%- include('../partials/footer') %>
