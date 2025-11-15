@@ -1,0 +1,19 @@
+<%- include('partials/header') %>
+<% const path = '/profil-staff' %>
+
+<section class="section">
+  <div class="container">
+    <h1 class="section-title">Staff & Guru</h1>
+    <div class="grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(250px,1fr)); gap:1.5rem;">
+      <% staff.forEach(s => { %>
+        <div class="card text-center p-3">
+          <img src="<%= s.foto || '/img/placeholder.jpg' %>" alt="<%= s.nama %>" style="width:120px; height:120px; object-fit:cover; border-radius:50%; margin:0 auto 1rem;" />
+          <h4><%= s.nama %></h4>
+          <p class="text-muted"><%= s.deskripsi %></p>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
