@@ -1,0 +1,20 @@
+<%- include('partials/header') %>
+<% const path = '/kalender' %>
+
+<section class="section">
+  <div class="container">
+    <h1 class="section-title">Kalender Akademik 2025/2026</h1>
+    <div class="grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(300px,1fr)); gap:1.5rem;">
+      <% kalender.forEach(k => { %>
+        <div class="card p-4 text-center">
+          <p class="text-muted"><%= new Date(k.tanggal).toLocaleDateString('id-ID', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) %></p>
+          <h4><%= k.judul %></h4>
+          <% if (k.keterangan) { %><p class="text-muted small"><%= k.keterangan %></p><% } %>
+          <span class="badge <%= k.jenis === 'ujian' ? 'bg-danger' : k.jenis === 'libur' ? 'bg-success' : k.jenis === 'rapat' ? 'bg-warning' : 'bg-primary' %>"><%= k.jenis.toUpperCase() %></span>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
