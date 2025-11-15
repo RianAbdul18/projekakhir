@@ -1,0 +1,12 @@
+<section class="hero-slider" id="heroSlider">
+  <% sliders.forEach((slide, index) => { %>
+    <div class="slide <%= index === 0 ? 'active' : '' %>" style="background-image: url('<%= slide.gambar %>');">
+      <div class="slide-content">
+        <h1><%= slide.judul %></h1>
+        <% if (slide.subjudul) { %><p><%= slide.subjudul %></p><% } %>
+        <% if (slide.link) { %><a href="<%= slide.link %>" class="btn">Lihat Selengkapnya</a><% } %>
+      </div>
+    </div>
+  <% }) %>
+</section>
+<script src="/js/slider.js"></script>
